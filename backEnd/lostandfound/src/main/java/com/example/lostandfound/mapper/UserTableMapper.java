@@ -61,10 +61,19 @@ public interface UserTableMapper {
             /*@Result(property = "userId", column = "userId"),*/
             @Result(property = "username", column = "username"),
             @Result(property = "usrpwd", column = "usrpwd"),
-            @Result(property = "phoneNumber", column = "phoneNumber"),
+            @Result(property = "phonenumber", column = "phonenumber"),
             @Result(property = "credit", column = "credit"),
             @Result(property = "score", column = "score"),
             @Result(property = "portrait", column = "portrait"),
     })
     List<UserTable> queryAll();
+
+    @Select("SELECT userId, usrpwd FROM UserTable WHERE username = #{username}")
+    @Results({
+            @Result(property = "usrpwd", column = "usrpwd")
+    })
+    UserTable login(String username);
+
+    @Select("SELECT max(userId) FROM UserTable")
+    String getMaxId();
 }

@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
@@ -52,5 +54,70 @@ public class UserController {
         //userTable.
         List<UserTable> users = userTableMapper.queryAll();
         return users;
+    }
+
+    @RequestMapping("/user/login")
+    public Object login(String username, String password){
+        Map<String, Object> map = new HashMap<>();
+        UserTable user = userTableMapper.login(username);
+        if (user==null){
+            map.put("status", 2);
+            map.put("msg","用户名不存在！");
+        }else {
+            String pwd = user.getUsrpwd();
+            System.out.println("pwd:"+pwd+",password:"+password+","+pwd.equals(password));
+            if(pwd.equals(password)){
+                map.put("status", 1);
+                map.put("userId",user.getUserid());
+                request.getSession().setAttribute("username", username);
+                request.getSession().setAttribute("userid", user.getUserid());
+                //System.out.println(request.getSession().getId());
+            }else {
+                map.put("status", 3);
+                map.put("msg", "密码错误！");
+            }
+        }
+        //responseBuilder.setMap(map);
+        return map;
+    }
+
+    @RequestMapping("/user/register")
+    public Object register(String username, String password,String phoneNo,String portrait){
+        Map<String, Object> map = new HashMap<>();
+        UserTable user = userTableMapper.login(username);
+        if (user!=null){
+            map.put("status", 2);
+            map.put("msg","用户名已存在！");
+        }else {
+            UserTable userTable = new UserTable();
+            String maxId = userTableMapper.getMaxId();
+            System.out.println("maxId"+maxId);
+            Integer id = Integer.valueOf(maxId)+1;
+            userTable.setUserid(id.toString());
+            userTable.setUsername(username);
+            userTable.setUsrpwd(password);
+            userTable.setCredit(0);
+            userTable.setScore(0);
+            userTable.setPhonenumber(phoneNo);
+            userTable.setPortrait(portrait);
+            int status = userTableMapper.insert(userTable);
+            map.put("status",status);
+            if(status!=1) map.put("msg","注册失败！");
+            map.put("userId",id);
+            request.getSession().setAttribute("username", username);
+            request.getSession().setAttribute("userid", id.toString());
+        }
+        return map;
+    }
+
+    @RequestMapping("/user/getUser")
+    public Object getUser(){
+        //System.out.println("getUser:"+request.getSession().getId());
+        Map<String, Object> map = new HashMap<>();
+        String username = (String)request.getSession().getAttribute("username");
+        String userid = (String)request.getSession().getAttribute("userid");
+        map.put("username",username);
+        map.put("userid",userid);
+        return map;
     }
 }
