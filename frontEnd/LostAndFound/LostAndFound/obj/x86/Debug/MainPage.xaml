@@ -18,10 +18,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="632" Width="290" FontSize="72" FontFamily="Segoe UI" FontWeight="Bold" FocusVisualPrimaryBrush="#FFEC1515"><Run Text="Lost"/><LineBreak/><Run/><LineBreak/><Run Text="and"/><LineBreak/><Run/><LineBreak/><Run Text="Found"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,56,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="322" FontSize="48" Grid.ColumnSpan="2" Grid.Column="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,226,0,0" Text="密  码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="322" FontSize="48" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="229,56,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340" Grid.Column="3" PlaceholderText="输入用户名"/>
-        <TextBox x:ConnectionId='2' HorizontalAlignment="Left" Margin="229,226,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340"                                   Grid.Column="3" PlaceholderText="输入密码"/>
-        <Button x:ConnectionId='3' Content="注册新用户" Grid.Column="3" HorizontalAlignment="Left" Margin="107,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36" FontFamily="Segoe UI"                     />
-        <Button x:ConnectionId='4' Content="登录" Grid.Column="3" HorizontalAlignment="Left" Margin="423,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36"                       />
+        <TextBox x:ConnectionId='2' x:Name="textBox_username" HorizontalAlignment="Left" Margin="229,56,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340" Grid.Column="3" PlaceholderText="输入用户名"/>
+        <TextBox x:ConnectionId='3' x:Name="textBox_password" HorizontalAlignment="Left" Margin="229,226,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340"                                   Grid.Column="3" PlaceholderText="输入密码"/>
+        <Button x:ConnectionId='4' Content="注册新用户" Grid.Column="3" HorizontalAlignment="Left" Margin="107,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36" FontFamily="Segoe UI"                     />
+        <Button x:ConnectionId='5' Content="登录" Grid.Column="3" HorizontalAlignment="Left" Margin="423,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36"                             />
     </Grid>
 </Page>
 

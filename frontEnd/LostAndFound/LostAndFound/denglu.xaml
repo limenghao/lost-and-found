@@ -8,7 +8,60 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
 
+
+    <Grid RenderTransformOrigin="0.475,0.49">
+
+        <Button x:Name="goback" Content="&#xE0C4;" HorizontalAlignment="Left" Margin="48,606,0,0" VerticalAlignment="Top" Height="58" Width="76" FontFamily="Segoe MDL2 Assets" FontSize="36" Click="goback_Click" RenderTransformOrigin="5.118,5.207"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="954,32,0,0" VerticalAlignment="Top" Width="59" Source="Assets/weizhi.jpg" RenderTransformOrigin="-0.925,0.687" Tapped="Image_Tapped_1"/>
+        <TextBlock x:Name="Grzx" HorizontalAlignment="Left" Margin="1032,32,0,0" Text="个人中心" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="211" FontSize="48" Foreground="#FF1878D8"/>
+        <TextBlock x:Name="LAF" HorizontalAlignment="Left" Margin="48,25,0,0" Text="lost and found" TextWrapping="Wrap" VerticalAlignment="Top" Height="122" Width="532" FontSize="72" FontWeight="Bold"/>
+        <TextBox x:Name="search_box" HorizontalAlignment="Left" Margin="92,192,0,0" Text="" VerticalAlignment="Top" Height="62" Width="264" PlaceholderText="物品搜索" FontSize="36"/>
+        <Button x:Name="search_button" Content="搜索" HorizontalAlignment="Left" Margin="356,192,0,0" VerticalAlignment="Top" Height="62" Width="91" FontSize="36" Background="#FF1878D8" Foreground="#FFFBE8E8"/>
+        <TextBlock x:Name="lost_text" HorizontalAlignment="Left" Margin="258,312,0,0" Text="寻物启事" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="194" FontSize="36" FontWeight="Bold"/>
+        <TextBlock x:Name="found_text" HorizontalAlignment="Left" Margin="794,312,0,0" Text="失物招领" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="194" FontSize="36" FontWeight="Bold"/>
+        <TextBox x:Name="location_text" HorizontalAlignment="Left" Margin="878,104,0,0" Text="" VerticalAlignment="Top" Height="23" Width="200" PlaceholderText="当前位置" FontSize="12" TextAlignment="Center"/>
+        <RadioButton x:Name="location_RadioButton" GroupName="asd" Content="地点" HorizontalAlignment="Left" Margin="903,208,0,0" VerticalAlignment="Top" FontSize="24" Height="40" Width="80"/>
+        <RadioButton x:Name="shoucang_RadioButton" GroupName="asd" Content="收藏" HorizontalAlignment="Left" Margin="1028,208,0,0" VerticalAlignment="Top"  FontSize="22" Height="40" Width="80"/>
+        <Button x:Name="fabu_button" Content="发布" HorizontalAlignment="Left" Margin="755,64,0,0" VerticalAlignment="Top" Height="60" Width="111" FontSize="36" Background="#FF1878D8" Foreground="#FFFBE8E8" Click="fabu_button_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="780,207,0,0" VerticalAlignment="Top" Height="47" Width="86">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Name="fanwei_combox" DataContext="fanwei" HorizontalAlignment="Left" Margin="554,207,0,0" VerticalAlignment="Top" Height="47" Width="86" SelectionChanged="fanwei_combox_SelectionChanged">
+            <ComboBoxItem>1km</ComboBoxItem>
+            <ComboBoxItem>3km</ComboBoxItem>
+            <ComboBoxItem>5km</ComboBoxItem>
+            <ComboBoxItem>20km</ComboBoxItem>
+            <ComboBoxItem>不限</ComboBoxItem>
+        </ComboBox>
+        <TextBlock x:Name="fanwei_text" HorizontalAlignment="Left" Margin="494,208,0,0" Text="范围" Height="47" Width="86" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="leixin_text" HorizontalAlignment="Left" Margin="660,208,0,0" Text="物品类型" Height="47" Width="106" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <ListView x:Name="lost_list" HorizontalAlignment="Left" Height="263" Margin="143,401,0,0" VerticalAlignment="Top" Width="375">
+            <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="74" Width="444" Margin="0,0,0,0">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text=" 信息标题" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Column="0" Width="auto"  Height="auto" FontSize="24" FontWeight="Bold" />
+                    <TextBlock Text=" 发布时间" HorizontalAlignment="Center"  Width="auto" Grid.Column="1" Height="auto" FontSize="24" FontWeight="Bold" Margin="20,0,0,0" VerticalAlignment="Stretch" />
+                </Grid>
+            </ListViewItem>
+        </ListView>
+        <ListView x:Name="found_list" HorizontalAlignment="Left" Height="263" Margin="708,401,0,0" VerticalAlignment="Top" Width="339">
+            <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="74" Width="444" Margin="0,0,0,0">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text=" 信息标题" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Column="0" Width="auto"  Height="auto" FontSize="24" FontWeight="Bold" />
+                    <TextBlock Text=" 发布时间" HorizontalAlignment="Center"  Width="auto" Grid.Column="1" Height="auto" FontSize="24" FontWeight="Bold" Margin="20,0,0,0" VerticalAlignment="Stretch" />
+                </Grid>
+            </ListViewItem>
+        </ListView>
     </Grid>
 </Page>

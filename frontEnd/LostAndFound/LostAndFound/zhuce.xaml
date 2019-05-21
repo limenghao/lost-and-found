@@ -11,16 +11,22 @@
     <Grid>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Margin="0,17,0,0" Height="159" Width="354"><Run Text="     "/><Run Text="欢迎注册 "/><LineBreak/><Run Text="lost and found"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="244,175,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="36"/>
-        <TextBox HorizontalAlignment="Left" Margin="463,175,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入一个用户名" FontFamily="Segoe UI"/>
+        <TextBox x:Name="username_new" HorizontalAlignment="Left" Margin="463,175,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入一个用户名" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Margin="244,265,0,0" Text="密   码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="36" FontFamily="Segoe UI"/>
-        <TextBox HorizontalAlignment="Left" Margin="463,265,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入您的密码" FontFamily="Segoe UI"/>
+        <TextBox x:Name="password_new" HorizontalAlignment="Left" Margin="463,265,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入您的密码" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Margin="244,363,0,0" Text="手机号码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="182" FontSize="36" FontFamily="Segoe UI"/>
-        <TextBox HorizontalAlignment="Left" Margin="463,363,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入您的手机号码" FontFamily="Segoe UI"/>
+        <TextBox x:Name="phoneNo_new" HorizontalAlignment="Left" Margin="463,363,0,0" Text="" VerticalAlignment="Top" Height="48" Width="496" PlaceholderText="输入您的手机号码" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Margin="247,448,0,0" Text="验证码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="182" FontSize="36" FontFamily="Segoe UI"/>
         <TextBox HorizontalAlignment="Left" Margin="463,448,0,0" Text="" VerticalAlignment="Top" Height="48" Width="218" PlaceholderText="输入您收到的验证码"/>
         <Button Content="发送验证码" HorizontalAlignment="Left" Margin="776,448,0,0" VerticalAlignment="Top" Height="48" Width="149" FontSize="24"/>
-        <Button Content="注册" HorizontalAlignment="Center" Margin="0,538,0,0" VerticalAlignment="Top" Height="68" Width="176" FontSize="24" Click="Button_Click"/>
+        <Button Content="注册" HorizontalAlignment="Center" Margin="0,588,0,0" VerticalAlignment="Top" Height="68" Width="176" FontSize="24" Click="Register_Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="247,522,0,0" Text="性   别：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="145" FontSize="36" FontFamily="Segoe UI"/>
+        <TextBox x:Name="checkCode_new" HorizontalAlignment="Left" Margin="463,448,0,0" Text="" VerticalAlignment="Top" Height="48" Width="218" PlaceholderText="输入您收到的验证码"/>
+        <ComboBox x:Name="gender_combox" HorizontalAlignment="Left" Margin="463,522,0,0" VerticalAlignment="Top" Height="47" Width="86">
+            <ComboBoxItem>男</ComboBoxItem>
+            <ComboBoxItem>女</ComboBoxItem>
 
+        </ComboBox>
 
     </Grid>
 </Page>
