@@ -9,17 +9,34 @@
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Children" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Margin" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="ImageSource" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -33,17 +50,8 @@
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="Background" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="FontWeight" />
       <RootEvent Name="Click" />
-      <RootEvent Name="Tapped" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Source" />
-      <RootProperty Name="RenderTransformOrigin" />
       <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -58,8 +66,8 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="FontFamily" />
-      <RootProperty Name="FocusVisualPrimaryBrush" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="RenderTransformOrigin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
@@ -72,6 +80,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
       <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
@@ -110,6 +120,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
+      <RootProperty Name="FontFamily" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -118,10 +129,9 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="LostAndFound.denglu" />
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
     <RootType FullName="LostAndFound.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
       <RootProperty Name="ZoomInteractionMode" />
@@ -130,6 +140,10 @@
       <RootEvent Name="MapTapped" />
     </RootType>
     <RootType FullName="LostAndFound.map" />
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
     <RootType FullName="LostAndFound.zhuce" />
   </Roots.RootTypes>
 </Roots>

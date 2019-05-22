@@ -1,6 +1,9 @@
 package com.example.lostandfound.mapper;
 
 import com.example.lostandfound.model.Item;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 public interface ItemMapper {
     /**
@@ -50,4 +53,9 @@ public interface ItemMapper {
      * @mbg.generated Tue May 14 20:23:06 CST 2019
      */
     int updateByPrimaryKey(Item record);
+
+    List<Item> selectAllItem();
+
+    @Select("SELECT max(itemId) FROM Item")
+    String getMaxId();
 }

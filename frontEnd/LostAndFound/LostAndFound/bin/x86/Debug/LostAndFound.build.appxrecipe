@@ -391,11 +391,26 @@
     <AppxPackagedFile Include="F:\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\bg.jpg">
+      <PackagePath>Assets\bg.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\bg2.jpg">
+      <PackagePath>Assets\bg2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\bg3.jpg">
+      <PackagePath>Assets\bg3.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\weizhi.jpg">
       <PackagePath>Assets\weizhi.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo2.png">
+      <PackagePath>Assets\logo2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo3.png">
+      <PackagePath>Assets\logo3.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -423,6 +438,9 @@
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\LostAndFound.xr.xml">
       <PackagePath>LostAndFound.xr.xml</PackagePath>

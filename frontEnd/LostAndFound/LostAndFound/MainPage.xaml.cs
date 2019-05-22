@@ -14,9 +14,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Web.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net.Http;
+using System.Text;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -52,14 +53,17 @@ namespace LostAndFound
                 ShowMessageDialog("用户名和密码不允许为空！");
             }
             //要访问的接口路径
-            var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/user/login?username="+username+"&password="+password);
-            var httpClient = new HttpClient();
+            var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/user/login");
             // Always catch network exceptions for async methods
             try 
             {
-                string result = await httpClient.GetStringAsync(uri);
-                //object product = JsonConvert.DeserializeObject(result);
-                JObject resultObj = JObject.Parse(result);
+                HttpClient client = new HttpClient();
+                Dictionary<string, string> dict = new Dictionary<string, string>(); ;
+                dict.Add("username", username);
+                dict.Add("password", password);
+                FormUrlEncodedContent formUrlEncodedContent = new FormUrlEncodedContent(dict);
+                HttpResponseMessage response = await client.PostAsync(uri, formUrlEncodedContent);
+                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
                 //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
                 if (int.Parse(resultObj["status"].ToString()) != 1)
                 {

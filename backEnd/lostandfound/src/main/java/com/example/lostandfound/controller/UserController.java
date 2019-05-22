@@ -3,6 +3,7 @@ package com.example.lostandfound.controller;
 import com.example.lostandfound.mapper.UserTableMapper;
 import com.example.lostandfound.model.UserTable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@RequestMapping(value = "/user", produces = "application/json;charset=UTF-8")
 public class UserController {
     @Autowired
     private UserTableMapper userTableMapper;
@@ -26,12 +28,6 @@ public class UserController {
         userTable.setUsrpwd("123");
         userTableMapper.insert(userTable);
         return "ok";
-    }
-
-    @RequestMapping("/getUser")
-    public Object getUser(String id) {
-        UserTable userTable = userTableMapper.selectByPrimaryKey(id);
-        return userTable;
     }
 
     @RequestMapping("/deleteUser")
@@ -56,7 +52,7 @@ public class UserController {
         return users;
     }
 
-    @RequestMapping("/user/login")
+    @PostMapping("/login")
     public Object login(String username, String password){
         Map<String, Object> map = new HashMap<>();
         UserTable user = userTableMapper.login(username);
@@ -81,7 +77,7 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping("/user/register")
+    @PostMapping("/register")
     public Object register(String username, String password,String phoneNo,String portrait){
         Map<String, Object> map = new HashMap<>();
         UserTable user = userTableMapper.login(username);
@@ -90,9 +86,10 @@ public class UserController {
             map.put("msg","用户名已存在！");
         }else {
             UserTable userTable = new UserTable();
+
             String maxId = userTableMapper.getMaxId();
-            System.out.println("maxId"+maxId);
-            Integer id = Integer.valueOf(maxId)+1;
+            Integer id = 1;
+            if(maxId!=null) id = Integer.valueOf(maxId)+1;
             userTable.setUserid(id.toString());
             userTable.setUsername(username);
             userTable.setUsrpwd(password);
@@ -110,7 +107,7 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping("/user/getUser")
+    @RequestMapping("/getUser")
     public Object getUser(){
         //System.out.println("getUser:"+request.getSession().getId());
         Map<String, Object> map = new HashMap<>();

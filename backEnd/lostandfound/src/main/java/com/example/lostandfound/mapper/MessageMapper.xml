@@ -13,6 +13,7 @@
     <result column="createDatetime" jdbcType="TIMESTAMP" property="createdatetime" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="itemId" jdbcType="VARCHAR" property="itemid" />
+    <result column="content" jdbcType="NVARCHAR" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--

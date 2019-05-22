@@ -8,20 +8,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="10,10,-10,-10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="446*"/>
-            <ColumnDefinition Width="42*"/>
-            <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="747*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="632" Width="290" FontSize="72" FontFamily="Segoe UI" FontWeight="Bold" FocusVisualPrimaryBrush="#FFEC1515"><Run Text="Lost"/><LineBreak/><Run/><LineBreak/><Run Text="and"/><LineBreak/><Run/><LineBreak/><Run Text="Found"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,56,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="322" FontSize="48" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,226,0,0" Text="密  码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="322" FontSize="48" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <TextBox x:ConnectionId='2' x:Name="textBox_username" HorizontalAlignment="Left" Margin="229,56,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340" Grid.Column="3" PlaceholderText="输入用户名"/>
-        <TextBox x:ConnectionId='3' x:Name="textBox_password" HorizontalAlignment="Left" Margin="229,226,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340"                                   Grid.Column="3" PlaceholderText="输入密码"/>
-        <Button x:ConnectionId='4' Content="注册新用户" Grid.Column="3" HorizontalAlignment="Left" Margin="107,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36" FontFamily="Segoe UI"                     />
-        <Button x:ConnectionId='5' Content="登录" Grid.Column="3" HorizontalAlignment="Left" Margin="423,466,0,0" VerticalAlignment="Top" Height="92" Width="209" FontSize="36"                             />
+    <Grid BorderBrush="#FF0E5F0E" BorderThickness="1,1,1,1">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bg3.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="161*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Assets/logo3.png" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="1" Margin="404,46,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="91" Width="322" FontSize="36" FontFamily="Arial" Foreground="#FF0C194D"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="1" Margin="405,166,0,0" Text="密  码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="322" FontSize="36" FontFamily="迷你简菱心" Foreground="#FF0C194D"/>
+        <TextBox x:ConnectionId='2' x:Name="textBox_username" Grid.Row="1" HorizontalAlignment="Left" Margin="554,33,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340" PlaceholderText="输入用户名" FontSize="36" FontFamily="Arial" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox x:ConnectionId='3' x:Name="textBox_password" Grid.Row="1" HorizontalAlignment="Left" Margin="555,153,0,0" Text="" VerticalAlignment="Top" Height="64" Width="340"                                   PlaceholderText="输入密码" FontSize="36"/>
+        <Button x:ConnectionId='4' Content="注册" Grid.Row="2"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="92" Width="209" FontSize="48" FontFamily="Segoe UI"                      Margin="378,0,0,0" Background="#8bc34a" Foreground="White" FontWeight="Bold"/>
+        <Button x:ConnectionId='5' Content="登录" Grid.Row="2"  HorizontalAlignment="Left" Margin="703,0,0,0" VerticalAlignment="Center" Height="92" Width="209" FontSize="48"                              Background="#ff9800" Foreground="White" FontWeight="Bold" FontFamily="Arial"/>
     </Grid>
 </Page>
 
