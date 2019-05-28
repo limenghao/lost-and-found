@@ -15,8 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
-
-
+using System.Net.Http;
 
 namespace LostAndFound
 {
@@ -30,6 +29,11 @@ namespace LostAndFound
         /// 初始化单一实例应用程序对象。这是执行的创作代码的第一行，
         /// 已执行，逻辑上等同于 main() 或 WinMain()。
         /// </summary>
+        
+        //全局的client
+        public HttpClient client = new HttpClient();
+
+
         public App()
         {
             this.InitializeComponent();

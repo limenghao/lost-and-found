@@ -6,65 +6,86 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="600" MinHeight="600" MaxHeight="600" Width="800" MinWidth="800" MaxWidth="800">
 
 
 
-    <Grid RenderTransformOrigin="0.475,0.49">
-        <Grid.Background>
-            <ImageBrush ImageSource="/Assets/bg3.jpg"/>
-        </Grid.Background>
-        <Image Source="Assets/logo3.png" Margin="-304,10,315,592" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Button x:ConnectionId='2' x:Name="goback" Content="&#xE0C4;" HorizontalAlignment="Left" Margin="48,606,0,0" VerticalAlignment="Top" Height="58" Width="76" FontFamily="Segoe MDL2 Assets" FontSize="36"                      RenderTransformOrigin="5.118,5.207"/>
-        <Image x:ConnectionId='3' HorizontalAlignment="Left" Height="35" Margin="1001,34,0,0" VerticalAlignment="Top" Width="34" Source="Assets/weizhi.jpg" RenderTransformOrigin="-0.925,0.687"                        />
-        <TextBlock x:ConnectionId='4' x:Name="Grzx" HorizontalAlignment="Left" Margin="1053,17,0,0" Text="个人中心" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="211" FontSize="48" Foreground="#FFF2F2F2"/>
-        <TextBox x:ConnectionId='5' x:Name="search_box" HorizontalAlignment="Left" Margin="56,129,0,0" Text="" VerticalAlignment="Top" Height="62" Width="264" PlaceholderText="物品搜索" FontSize="36"/>
-        <Button x:ConnectionId='6' x:Name="search_button" Content="搜索" HorizontalAlignment="Left" Margin="320,129,0,0" VerticalAlignment="Top" Height="62" Width="91" FontSize="36" Background="#FF1878D8" Foreground="#FFFBE8E8"/>
-        <TextBlock x:ConnectionId='7' x:Name="lost_text" HorizontalAlignment="Left" Margin="56,233,0,0" Text="寻物启事" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="194" FontSize="36" FontWeight="Bold"/>
-        <TextBlock x:ConnectionId='8' x:Name="found_text" HorizontalAlignment="Left" Margin="618,233,0,0" Text="失物招领" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="194" FontSize="36" FontWeight="Bold"/>
-        <TextBox x:ConnectionId='9' x:Name="location_text" HorizontalAlignment="Left" Margin="914,71,0,0" Text="" VerticalAlignment="Top" Height="23" Width="200" PlaceholderText="当前位置" FontSize="12" TextAlignment="Center"/>
-        <RadioButton x:ConnectionId='10' x:Name="location_RadioButton" GroupName="asd" Content="地点" HorizontalAlignment="Left" Margin="867,145,0,0" VerticalAlignment="Top" FontSize="24" Height="40" Width="80"/>
-        <RadioButton x:ConnectionId='11' x:Name="shoucang_RadioButton" GroupName="asd" Content="收藏" HorizontalAlignment="Left" Margin="992,145,0,0" VerticalAlignment="Top"  FontSize="22" Height="40" Width="80"/>
-        <Button x:ConnectionId='12' x:Name="fabu_button" Content="发布" HorizontalAlignment="Left" Margin="1117,132,0,0" VerticalAlignment="Top" Height="60" Width="111" FontSize="36" Background="#FFA9DAA3" Foreground="#FFFBF8F5"                           FontWeight="Bold"/>
-        <ComboBox HorizontalAlignment="Left" Margin="744,144,0,0" VerticalAlignment="Top" Height="47" Width="86">
-            <ComboBoxItem>1</ComboBoxItem>
-            <ComboBoxItem>2</ComboBoxItem>
-            <ComboBoxItem>3</ComboBoxItem>
-        </ComboBox>
+    <Grid RenderTransformOrigin="0.475,0.49" Width="800" MinWidth="800" MaxWidth="800" Background="#FFF1F7F9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="300*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" BorderBrush="#FF325E74" BorderThickness="0,0,2,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="Assets/logo4.png" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+            <Ellipse Grid.Row="1" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="50,29,50,0">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Assets/portrait.jpg" ></ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button x:ConnectionId='13' x:Name="Grzx" Content="个人中心" Grid.Row="1" Background="#FF9DC8DE" Width="100" HorizontalAlignment="Stretch" Margin="50,153,50,0" VerticalAlignment="Top"                          BorderBrush="#FF325E74"/>
 
-        <ComboBox x:ConnectionId='13' Name="fanwei_combox" DataContext="fanwei" HorizontalAlignment="Left" Margin="518,144,0,0" VerticalAlignment="Top" Height="47" Width="86"                                                  >
-            <ComboBoxItem>1km</ComboBoxItem>
-            <ComboBoxItem>3km</ComboBoxItem>
-            <ComboBoxItem>5km</ComboBoxItem>
-            <ComboBoxItem>20km</ComboBoxItem>
-            <ComboBoxItem>不限</ComboBoxItem>
-        </ComboBox>
-        <TextBlock x:ConnectionId='14' x:Name="fanwei_text" HorizontalAlignment="Left" Margin="458,145,0,0" Text="范围" Height="47" Width="86" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
-        <TextBlock x:ConnectionId='15' x:Name="leixin_text" HorizontalAlignment="Left" Margin="624,145,0,0" Text="物品类型" Height="47" Width="106" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
-        <ListView x:ConnectionId='16' x:Name="lost_list" HorizontalAlignment="Left" Height="263" Margin="48,286,0,0" VerticalAlignment="Top" Width="375">
-            <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="74" Width="444" Margin="0,0,0,0" FontFamily="Segoe UI">
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text=" 信息标题" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Column="0" Width="auto"  Height="auto" FontSize="24" FontWeight="Bold" />
-                    <TextBlock Text=" 发布时间" HorizontalAlignment="Center"  Width="auto" Grid.Column="1" Height="auto" FontSize="24" FontWeight="Bold" Margin="20,0,0,0" VerticalAlignment="Stretch" />
-                </Grid>
-            </ListViewItem>
-        </ListView>
-        <ListView x:ConnectionId='17' x:Name="found_list" HorizontalAlignment="Left" Height="263" Margin="618,286,0,0" VerticalAlignment="Top" Width="339">
-            <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="74" Width="444" Margin="0,0,0,0">
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text=" 信息标题" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Column="0" Width="auto"  Height="auto" FontSize="24" FontWeight="Bold" />
-                    <TextBlock Text=" 发布时间" HorizontalAlignment="Center"  Width="auto" Grid.Column="1" Height="auto" FontSize="24" FontWeight="Bold" Margin="20,0,0,0" VerticalAlignment="Stretch" />
-                </Grid>
-            </ListViewItem>
-        </ListView>
+            <TextBox x:ConnectionId='14' Grid.Row="2" x:Name="location_text" HorizontalAlignment="Center" Text="" VerticalAlignment="Stretch" Height="30" Width="150" PlaceholderText="当前位置" FontSize="12" TextAlignment="Center"/>
+            <Image x:ConnectionId='15' Grid.Row="2" HorizontalAlignment="Center" Height="35" Source="Assets/weizhi.jpg" RenderTransformOrigin="-0.925,0.687"                         Margin="0,10,0,105" VerticalAlignment="Stretch"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBox x:ConnectionId='2' x:Name="search_box" Text="" Height="40" Width="120" PlaceholderText="物品搜索" FontSize="20" RequestedTheme="Light" Margin="22,28,458,32"/>
+            <Button x:ConnectionId='3' x:Name="search_button" Content="搜索" Height="35" Width="80" FontSize="18" Background="#FF982D41" Foreground="#FFFBE8E8" HorizontalAlignment="Left" Margin="147,30,0,0" VerticalAlignment="Top"/>
+
+            <RadioButton x:ConnectionId='4' x:Name="location_RadioButton" GroupName="asd" Content="地点" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Height="40" Width="120" Margin="272,0,0,0"/>
+            <RadioButton x:ConnectionId='5' x:Name="shoucang_RadioButton" GroupName="asd" Content="收藏" FontSize="22" Height="40" Width="120" HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Center"/>
+            <Button x:ConnectionId='6' x:Name="fabu_button" Content="发布启事" HorizontalAlignment="Left" Height="50" Width="111" FontSize="20" Background="#FF325E74" Foreground="#FFFBF8F5"                           FontWeight="Bold" Margin="479,0,0,0" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" BorderBrush="#FF325E74" BorderThickness="0,0,0,2">
+                <TextBlock x:ConnectionId='9' Grid.Row="1" x:Name="fanwei_text" Text="范围" Height="47" Width="86" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Margin="22,6,492,0" Grid.RowSpan="3"/>
+                <ComboBox x:ConnectionId='10' Grid.Row="1" Name="fanwei_combox" DataContext="fanwei" Height="30" Width="80"                                                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="84,0,0,0">
+                    <ComboBoxItem>1km</ComboBoxItem>
+                    <ComboBoxItem>3km</ComboBoxItem>
+                    <ComboBoxItem>5km</ComboBoxItem>
+                    <ComboBoxItem>20km</ComboBoxItem>
+                    <ComboBoxItem>不限</ComboBoxItem>
+                </ComboBox>
+                <TextBlock x:ConnectionId='11' Grid.Row="1" x:Name="leixin_text" Text="物品类型" Height="47" Width="106" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Margin="187,6,307,0" Grid.RowSpan="2" HorizontalAlignment="Stretch"/>
+                <ComboBox x:ConnectionId='12' Grid.Row="1" Name="type_combox" DataContext="fanwei" Height="30" Width="80"                                                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="300,0,0,0">
+                    <ComboBoxItem>钱包</ComboBoxItem>
+                    <ComboBoxItem>身份证</ComboBoxItem>
+                    <ComboBoxItem>手机</ComboBoxItem>
+                    <ComboBoxItem>其他</ComboBoxItem>
+                    <ComboBoxItem>不限</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="2" Background="White">
+                <ListView x:ConnectionId='7' x:Name="lost_list" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="580" Margin="5,10,5,10" FontFamily="Segoe UI" BorderBrush="#FF325E74" BorderThickness="4,4,4,4">
+                        <Grid Width="540">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.5*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="【寻物启事】" VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text=" 丢失黑色耳机一副" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
+                            <TextBlock Text=" 2019-05-20" Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+                            <Button x:ConnectionId='8' Content="查看" Grid.Column="3" Background="#FF325E74" Foreground="White" Width="50" Height="30"                  ></Button>
+                        </Grid>
+                    </ListViewItem>
+                    
+                </ListView>
+            </Grid>
+            
+        </Grid>
+
+
     </Grid>
 </Page>
 

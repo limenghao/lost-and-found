@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -57,7 +58,8 @@ namespace LostAndFound
             // Always catch network exceptions for async methods
             try 
             {
-                HttpClient client = new HttpClient();
+                HttpClient client = (Application.Current as App).client;
+                //HttpClient client = new HttpClient();
                 Dictionary<string, string> dict = new Dictionary<string, string>(); ;
                 dict.Add("username", username);
                 dict.Add("password", password);
@@ -92,7 +94,7 @@ namespace LostAndFound
             {
                 // Details in ex.Message and ex.HResult.   
             }
-
+            
             async void ShowMessageDialog(string msg)
             {
                 var msgDialog = new Windows.UI.Popups.MessageDialog(msg) { Title = "提示" };
@@ -100,6 +102,31 @@ namespace LostAndFound
                 await msgDialog.ShowAsync();
             }
 
+        }
+
+        public async Task testFunAsync()
+        {
+            Debug.WriteLine("in the function testFun");
+            try
+            {
+                HttpClient client = (Application.Current as App).client;
+                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/user/getUser");
+                HttpResponseMessage response = await client.GetAsync(uri);
+                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+                Debug.WriteLine(resultObj);
+                Debug.WriteLine(resultObj["username"]);
+            }
+            catch
+            {
+                // Details in ex.Message and ex.HResult.   
+            }
+
+            async void ShowMessageDialog(string msg)
+            {
+                var msgDialog = new Windows.UI.Popups.MessageDialog(msg) { Title = "提示" };
+                msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("确定"));
+                await msgDialog.ShowAsync();
+            }
         }
 
     }

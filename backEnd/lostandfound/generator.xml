@@ -14,7 +14,7 @@
 
         <!-- 数据库的相关配置（需要自行修改！！！！） -->
         <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                        connectionURL="jdbc:sqlserver://lostandfoundsqlserver2.database.chinacloudapi.cn:1433;DatabaseName=coreDB"
+                        connectionURL="jdbc:sqlserver://lostandfoundsqlserver2.database.chinacloudapi.cn:1433;DatabaseName=LFDB"
                         userId="zhimake"
                         password="lost123-"/>
 

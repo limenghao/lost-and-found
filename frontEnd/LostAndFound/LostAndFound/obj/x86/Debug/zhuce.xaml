@@ -6,31 +6,26 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="600" Width="800">
 
-    <Grid BorderBrush="#FF0E5F0E" BorderThickness="1,1,1,1">
-        <Grid.Background>
-            <ImageBrush ImageSource="/Assets/bg3.jpg"/>
-        </Grid.Background>
+    <Grid BorderBrush="#FF0E5F0E" BorderThickness="1,1,1,1" Background="#FFF1F7F9" Height="600" Width="800" MinHeight="600" MaxHeight="600" MinWidth="800" MaxWidth="800">
         <Grid.RowDefinitions>
-            <RowDefinition Height="105*"/>
-            <RowDefinition Height="613*"/>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="350*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/logo3.png" Margin="2,9,9,520" Grid.RowSpan="2"/>
-
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Margin="416,60,0,0" Height="66" Width="354" FontFamily="迷你简菱心" Foreground="#FF0C194D"><Run Text="     "/><Run Text="欢迎注册 "/><LineBreak/></TextBlock>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="341,140,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="36" FontFamily="迷你简菱心" Foreground="#FF0C194D"/>
-        <TextBox x:ConnectionId='2' Grid.Row="1" x:Name="username_new" HorizontalAlignment="Left" Margin="480,141,0,0" Text="" VerticalAlignment="Top" Height="40" Width="496" PlaceholderText="输入一个用户名" FontFamily="Segoe UI" FontSize="24"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="341,204,0,0" Text="密  码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="36" FontFamily="迷你简菱心" Foreground="#FF0C194D"/>
-        <TextBox x:ConnectionId='3' Grid.Row="1" x:Name="password_new" HorizontalAlignment="Left" Margin="481,205,0,0" Text="" VerticalAlignment="Top" Height="40" Width="496" PlaceholderText="输入您的密码" FontFamily="Arial" FontSize="24"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="307,0,0,0" Text="手机号码：" TextWrapping="Wrap" VerticalAlignment="Center" Height="59" Width="182" FontSize="36" FontFamily="迷你简菱心" Foreground="#FF0C194D"/>
-        <TextBox x:ConnectionId='4' Grid.Row="1" x:Name="phoneNo_new" HorizontalAlignment="Left" Margin="480,278,0,0" Text="" VerticalAlignment="Top" Height="40" Width="496" PlaceholderText="输入您的手机号码" FontFamily="Arial" FontSize="24"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="340,351,0,0" Text="验证码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="182" FontSize="36" FontFamily="迷你简菱心" Foreground="#FF0C194D"/>
-        <Button Grid.Row="1" Content="发送验证码" HorizontalAlignment="Left" Margin="825,345,0,0" VerticalAlignment="Top" Height="48" Width="149" FontSize="24" Background="#8bc34a" Foreground="White" FontFamily="迷你简菱心" />
-        <Button x:ConnectionId='5' Grid.Row="1" Content="注册" HorizontalAlignment="Left" Margin="541,484,0,0" VerticalAlignment="Top" Height="68" Width="176" FontSize="36"                               Background="#ff9800" Foreground="White" FontWeight="Bold" FontFamily="Arial"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="340,420,0,0" Text="性  别：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="145" FontSize="36" FontFamily="迷你简菱心" RenderTransformOrigin="1.037,-0.432" Foreground="#FF0C194D"/>
-        <TextBox x:ConnectionId='6' Grid.Row="1" x:Name="checkCode_new" HorizontalAlignment="Center" Margin="0,350,0,0" Text="" VerticalAlignment="Top" Height="40" Width="318" PlaceholderText="输入您收到的验证码" FontSize="24"/>
-        <ComboBox x:ConnectionId='7' Grid.Row="1" x:Name="gender_combox" HorizontalAlignment="Left" Margin="481,418,0,0" VerticalAlignment="Top" Height="47" Width="86">
+        <Image Source="Assets/logo5.png" Margin="3,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="218,30,0,0" Text="用户名：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="24" FontFamily="STSong" Foreground="#FF0C194D"/>
+        <TextBox x:ConnectionId='2' Grid.Row="1" x:Name="username_new" HorizontalAlignment="Left" Margin="318,24,0,0" Text="" VerticalAlignment="Top" Height="40" Width="300" PlaceholderText="输入一个用户名" FontFamily="STSong" FontSize="24"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="230,86,0,0" Text="密  码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="152" FontSize="24" FontFamily="STSong" Foreground="#FF0C194D"/>
+        <TextBox x:ConnectionId='3' Grid.Row="1" x:Name="password_new" HorizontalAlignment="Left" Margin="318,81,0,0" Text="" VerticalAlignment="Top" Height="40" Width="300" PlaceholderText="输入您的密码" FontFamily="STSong" FontSize="24"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="195,144,0,0" Text="手机号码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="182" FontSize="24" FontFamily="STSong" Foreground="#FF0C194D"/>
+        <TextBox x:ConnectionId='4' Grid.Row="1" x:Name="phoneNo_new" HorizontalAlignment="Left" Margin="318,139,0,0" Text="" VerticalAlignment="Top" Height="40" Width="300" PlaceholderText="输入您的手机号码" FontFamily="STSong" FontSize="24"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="218,201,0,0" Text="验证码：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="182" FontSize="24" FontFamily="STSong" Foreground="#FF0C194D"/>
+        <Button Grid.Row="1" Content="发送验证码" HorizontalAlignment="Left" Margin="496,191,0,0" VerticalAlignment="Top" Height="40" Width="120" FontSize="20" Background="#8bc34a" Foreground="White" FontFamily="STSong" />
+        <Button x:ConnectionId='5' Grid.Row="1" Content="注册" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Width="120" FontSize="36"                               Background="#FF982D41" Foreground="White" FontWeight="Bold" FontFamily="Arial" Margin="0,326,0,0"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="231,257,0,0" Text="性  别：" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="145" FontSize="24" FontFamily="STSong" RenderTransformOrigin="1.037,-0.432" Foreground="#FF0C194D"/>
+        <TextBox x:ConnectionId='6' Grid.Row="1" x:Name="checkCode_new" HorizontalAlignment="Left" Margin="319,193,0,0" Text="" VerticalAlignment="Top" Height="40" Width="170" PlaceholderText="输入验证码" FontSize="24" FontFamily="STSong"/>
+        <ComboBox x:ConnectionId='7' Grid.Row="1" x:Name="gender_combox" HorizontalAlignment="Left" Margin="319,255,0,0" VerticalAlignment="Top" Height="40" Width="86">
             <ComboBoxItem>男</ComboBoxItem>
             <ComboBoxItem>女</ComboBoxItem>
 

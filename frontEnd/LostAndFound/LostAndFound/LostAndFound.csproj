@@ -98,13 +98,43 @@
     <Compile Include="denglu.xaml.cs">
       <DependentUpon>denglu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="itemInfo.xaml.cs">
+      <DependentUpon>itemInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="map.xaml.cs">
       <DependentUpon>map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="newItem.xaml.cs">
+      <DependentUpon>newItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sendMsg.xaml.cs">
+      <DependentUpon>sendMsg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userCollect.xaml.cs">
+      <DependentUpon>userCollect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userFound.xaml.cs">
+      <DependentUpon>userFound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userInfo.xaml.cs">
+      <DependentUpon>userInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userInfoChange.xaml.cs">
+      <DependentUpon>userInfoChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userLost.xaml.cs">
+      <DependentUpon>userLost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userNews.xaml.cs">
+      <DependentUpon>userNews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="zhuce.xaml.cs">
       <DependentUpon>zhuce.xaml</DependentUpon>
     </Compile>
@@ -119,10 +149,18 @@
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\bg2.jpg" />
     <Content Include="Assets\bg3.jpg" />
-    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\bg4.jpg" />
+    <Content Include="Assets\geren.png" />
     <Content Include="Assets\logo2.png" />
     <Content Include="Assets\logo3.png" />
+    <Content Include="Assets\logo4.png" />
+    <Content Include="Assets\logo5.png" />
+    <Content Include="Assets\portrait.jpg" />
+    <Content Include="Assets\shoucang.png" />
     <Content Include="Assets\weizhi.jpg" />
+    <Content Include="Assets\xiaoxi.png" />
+    <Content Include="Assets\xunwu.png" />
+    <Content Include="Assets\zhaoling.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -141,11 +179,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="itemInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="newItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sendMsg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userCollect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userFound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userInfoChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userLost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userNews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

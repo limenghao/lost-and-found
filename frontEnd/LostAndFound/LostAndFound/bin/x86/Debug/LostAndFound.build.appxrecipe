@@ -400,17 +400,41 @@
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\bg3.jpg">
       <PackagePath>Assets\bg3.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\bg4.jpg">
+      <PackagePath>Assets\bg4.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\portrait.jpg">
+      <PackagePath>Assets\portrait.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\weizhi.jpg">
       <PackagePath>Assets\weizhi.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo.png">
-      <PackagePath>Assets\logo.png</PackagePath>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\geren.png">
+      <PackagePath>Assets\geren.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo2.png">
       <PackagePath>Assets\logo2.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo3.png">
       <PackagePath>Assets\logo3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo4.png">
+      <PackagePath>Assets\logo4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\logo5.png">
+      <PackagePath>Assets\logo5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\shoucang.png">
+      <PackagePath>Assets\shoucang.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\xiaoxi.png">
+      <PackagePath>Assets\xiaoxi.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\xunwu.png">
+      <PackagePath>Assets\xunwu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\zhaoling.png">
+      <PackagePath>Assets\zhaoling.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -451,11 +475,41 @@
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\denglu.xbf">
       <PackagePath>denglu.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\itemInfo.xbf">
+      <PackagePath>itemInfo.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\map.xbf">
       <PackagePath>map.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\newItem.xbf">
+      <PackagePath>newItem.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\sendMsg.xbf">
+      <PackagePath>sendMsg.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userCollect.xbf">
+      <PackagePath>userCollect.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userFound.xbf">
+      <PackagePath>userFound.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userInfo.xbf">
+      <PackagePath>userInfo.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userInfoChange.xbf">
+      <PackagePath>userInfoChange.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userLost.xbf">
+      <PackagePath>userLost.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userNews.xbf">
+      <PackagePath>userNews.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\UserPage.xbf">
+      <PackagePath>UserPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\zhuce.xbf">
       <PackagePath>zhuce.xbf</PackagePath>
