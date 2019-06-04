@@ -107,6 +107,7 @@
     <Compile Include="map.xaml.cs">
       <DependentUpon>map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Item.cs" />
     <Compile Include="newItem.xaml.cs">
       <DependentUpon>newItem.xaml</DependentUpon>
     </Compile>

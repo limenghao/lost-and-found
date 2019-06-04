@@ -28,46 +28,50 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Image Source="Assets/logo4.png" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     </Grid>
                     <ListBox x:ConnectionId='3' Grid.Row="1" SelectionMode="Single"                                             FontFamily="YouYuan">
-                        <ListBoxItem x:ConnectionId='4' Name="userinfo" BorderBrush="#FF325E74" BorderThickness="0,0,0,5">
+                        <ListBoxItem x:ConnectionId='5' Name="userinfo" BorderBrush="#FF325E74" BorderThickness="0,0,0,5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock  FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;" />
                                 <TextBlock FontSize="24" Margin="10,0,0,0" Text="个人信息" FontWeight="Bold" FontFamily="YouYuan" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem x:ConnectionId='5' Name="userlost">
+                        <ListBoxItem x:ConnectionId='6' Name="userlost">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock  FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE1CE;"/>
                                 <TextBlock FontSize="24" Margin="10,0,0,0" Text="发布的寻物" FontFamily="YouYuan" FontWeight="Bold" VerticalAlignment="Bottom"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='6' Name="userfound">
+                    <ListBoxItem x:ConnectionId='7' Name="userfound">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock  FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;"/>
                                 <TextBlock FontSize="24" Margin="10,0,0,0" Text="发布的招领" FontFamily="YouYuan" FontWeight="Bold" VerticalAlignment="Bottom"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='7' Name="usercollect">
+                    <ListBoxItem x:ConnectionId='8' Name="usercollect">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock  FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE1CE;"/>
                                 <TextBlock FontSize="24" Margin="10,0,0,0" Text="我的收藏" FontFamily="YouYuan" FontWeight="Bold" VerticalAlignment="Bottom"/>
                         </StackPanel>
                     </ListBoxItem>
-                        <ListBoxItem x:ConnectionId='8' Name="usernews">
+                        <ListBoxItem x:ConnectionId='9' Name="usernews">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock  FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;"/>
                                 <TextBlock FontSize="24" Margin="10,0,0,0" Text="消息列表" FontFamily="YouYuan" FontWeight="Bold" VerticalAlignment="Bottom"/>
                             </StackPanel>
                         </ListBoxItem>
                     </ListBox>
+                    <Grid Grid.Row="2">
+                        <Button x:ConnectionId='4' HorizontalAlignment="Center" VerticalAlignment="Top" Content="返回主页" Background="#FF325E74" Foreground="#FFFBF8F5" FontWeight="Bold"                   />
+                    </Grid>
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <Frame x:ConnectionId='9' Name="MyFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Segoe UI"/>
+                <Frame x:ConnectionId='10' Name="MyFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Segoe UI"/>
             </SplitView.Content>
         </SplitView>
     </Grid>

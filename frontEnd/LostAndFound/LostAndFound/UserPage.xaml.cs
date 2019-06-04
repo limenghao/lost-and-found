@@ -74,5 +74,10 @@ namespace LostAndFound
                 MyFrame.Navigate(typeof(userNews));
             }
         }
+
+        private void backToMain(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(denglu));
+        }
     }
 }

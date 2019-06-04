@@ -18,6 +18,8 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using LostAndFound.Models;
+using System.Collections.ObjectModel;
 
 
 
@@ -30,14 +32,38 @@ namespace LostAndFound
     /// </summary>
     public sealed partial class denglu : Page
     {
-
+        //private List<Item> Items = ItemManager.GetItems();
+        //private ObservableCollection<Item> Items;
+        public ItemViewModel ViewModel { get; set; }
+        //保存经纬度
+        double longitude;
+        double latitude;
         public denglu()
         {
             this.InitializeComponent();
-            getRecommendedItemsAsync();
+            this.ViewModel = new ItemViewModel();
+            
+            //getRecommendedItemsAsync();
+            //Items = ItemManager.GetItems();
         }
         
-
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Debug.WriteLine("here in the onNavigatedTo fun");
+            //页面初始加载默认的附近启事推荐
+            //"?longitude=116.45543&latitude=39.87333&type=1&category=钱包&range=1000&num=3");
+            //异步获取位置，保存到变量中
+            var position = await denglu.GetPosition();
+            //维度
+            double lat = position.Coordinate.Point.Position.Latitude;
+            //经度
+            double lon = position.Coordinate.Point.Position.Longitude;
+            Debug.WriteLine("lat:" + lat + ",lon:" + lon);
+            Debug.WriteLine("lat:" + latitude + ",lon:" + longitude);
+            ViewModel.getItemsAsync(116.45543, 39.87333, 1,"钱包",1000,5);
+            //await Task.Delay(1000);
+            base.OnNavigatedTo(e);
+        }
         public async static Task<Geoposition> GetPosition()
         {
             //请求对位置的访问权
@@ -55,14 +81,14 @@ namespace LostAndFound
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("here in the load fun");
-            await testFunAsync();
-            await getRecommendedItemsAsync();
             //异步获取位置，保存到变量中
             var position = await denglu.GetPosition();
             //维度
             double lat = position.Coordinate.Point.Position.Latitude;
             //经度
             double lon = position.Coordinate.Point.Position.Longitude;
+            longitude = lon;
+            latitude = lat;
             location_text.Text = lat.ToString();
         }
 
@@ -107,68 +133,16 @@ namespace LostAndFound
             this.Frame.Navigate(typeof(itemInfo));
         }
 
-        private async Task getRecommendedItemsAsync() {
-            try
-            {
-                //获取全局的client对象，进行接口访问
-                HttpClient client = (Application.Current as App).client;
-                //接口的路径，与接口文档保持一致
-                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/item/getNearItems" +
-                    "?longitude=116.45543&latitude=39.87333&type=1&category=钱包&range=1000&num=3");
-                HttpResponseMessage response = await client.GetAsync(uri);
-                Debug.WriteLine(response);
-                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-                //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
-                if (int.Parse(resultObj["status"].ToString()) != 1)
-                {
-                    ShowMessageDialog(resultObj["msg"].ToString());
-                }
-                else
-                {
-                    //根据文档可知，此方法传出结果的“itemInfo”是一个数组，用JAarry解析
-                    JArray items = JArray.Parse(resultObj["itemInfo"].ToString());
-                    for (int i = 0; i < items.Count; i++) {
-                        JObject item = JObject.Parse(items[i].ToString());
-                        //测试是否已经拿到了数据，测试可用
-                        Debug.WriteLine(item["category"]);
-                    }
-                }
-            }
-            catch
-            {
-                // Details in ex.Message and ex.HResult.   
-            }
-
-            async void ShowMessageDialog(string msg)
-            {
-                var msgDialog = new Windows.UI.Popups.MessageDialog(msg) { Title = "提示" };
-                msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("确定"));
-                await msgDialog.ShowAsync();
-            }
-        }
-        public async Task testFunAsync()
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Debug.WriteLine("in the function testFun in denglu");
-            try
-            {
-                HttpClient client = (Application.Current as App).client;
-                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/user/getUser");
-                HttpResponseMessage response = await client.GetAsync(uri);
-                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-                Debug.WriteLine(resultObj);
-                Debug.WriteLine(resultObj["username"]);
-            }
-            catch
-            {
-                // Details in ex.Message and ex.HResult.   
-            }
+            var item = (Item)e.ClickedItem;
+            Debug.WriteLine("Item here ");
+        }
 
-            async void ShowMessageDialog(string msg)
-            {
-                var msgDialog = new Windows.UI.Popups.MessageDialog(msg) { Title = "提示" };
-                msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("确定"));
-                await msgDialog.ShowAsync();
-            }
+        private void search(object sender, RoutedEventArgs e)
+        {
+            //Items = ItemManager.GetItems();
+            ViewModel.getItemsAsync(116.45543, 39.87333, 1, "钱包", 1000, 4);
         }
     }
 

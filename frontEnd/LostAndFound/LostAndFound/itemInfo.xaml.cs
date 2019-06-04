@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LostAndFound.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,13 +21,22 @@ namespace LostAndFound
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
+
     public sealed partial class itemInfo : Page
     {
+        public ItemViewModel itemViewModel { get; set; }
         public itemInfo()
         {
             this.InitializeComponent();
+            this.itemViewModel = new ItemViewModel();
         }
 
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            int itemId = 1;
+            await itemViewModel.getItemAsync(itemId);
+            base.OnNavigatedTo(e);
+        }
         private void backToMain(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(denglu));

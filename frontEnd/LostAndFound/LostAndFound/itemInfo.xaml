@@ -26,7 +26,7 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/logo4.png" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
                 <Button Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White" Click="backToMain"></Button>
-                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="【寻物启事】标题：丢失黑色钱包一个" Name="title" FontFamily="Segoe UI"></TextBlock>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"  Text="{x:Bind itemViewModel.MyItem.Title}" Name="title" FontFamily="Segoe UI"></TextBlock>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">物品种类：</TextBlock>
-            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30">钱包</TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind itemViewModel.MyItem.Category}"></TextBlock>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -44,7 +44,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30">内容：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox TextWrapping="Wrap" FontSize="24" Text="本人于2019年5月21日晚于和平大道上丢失一个黑色钱包，内有少量现金和重要身份证件" AcceptsReturn="True" IsReadOnly="True"></TextBox>
+                <TextBox TextWrapping="Wrap" FontSize="24"  Text="{x:Bind itemViewModel.MyItem.Content}" AcceptsReturn="True" IsReadOnly="True"></TextBox>
             </ScrollViewer>
         </Grid>
         <Grid Grid.Row="3">
@@ -53,7 +53,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">发布时间：</TextBlock>
-            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30">2019-05-21 19：00：34</TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind itemViewModel.MyItem.CreateDatetime}"></TextBlock>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">发布人：</TextBlock>
-            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30">张三</TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind itemViewModel.MyItem.CreateUser}"></TextBlock>
 
         </Grid>
         <Grid Grid.Row="5">
@@ -70,7 +70,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">丢失地点：</TextBlock>
-            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30">和平大道</TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind itemViewModel.MyItem.Place}"></TextBlock>
         </Grid>
         <Grid Grid.Row="6">
             <Button Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF325E74" Foreground="White" RenderTransformOrigin="1.312,0.469" Margin="46,0,0,0" Click="comment"/>

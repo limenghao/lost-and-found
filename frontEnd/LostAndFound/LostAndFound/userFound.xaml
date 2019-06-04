@@ -14,7 +14,7 @@
             <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Image Source="Assets/zhaoling.png" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            <Image Source="Assets/zhaoling.png" Width="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
             <!--<Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="editPersonInfo">编辑</Button>-->
         </Grid>
         <Grid Grid.Row="1">
