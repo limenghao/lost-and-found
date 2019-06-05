@@ -25275,18 +25275,20 @@
       ]
     },
     "System.Collections.Immutable/1.2.0": {
-      "sha512": "Cma8cBW6di16ZLibL8LYQ+cLjGzoKxpOTu/faZfDcx94ZjAGq6Nv5RO7+T1YZXqEXTZP9rt1wLVEONVpURtUqw==",
+      "sha512": "2KnDB5xOmdERBZDniirmMPmY4AIUM7AbAIn+faLNShDc3mk0pe8iiPzBuJc5vMhTmMwEZbV2QbRAcaY+y2zwkw==",
       "type": "package",
       "path": "system.collections.immutable/1.2.0",
       "files": [
-        "System.Collections.Immutable.1.2.0.nupkg.sha512",
-        "System.Collections.Immutable.nuspec",
+        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml"
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
+        "system.collections.immutable.1.2.0.nupkg.sha512",
+        "system.collections.immutable.nuspec"
       ]
     },
     "System.Collections.NonGeneric/4.0.1": {
@@ -30221,24 +30223,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\limenghao\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\学习资料\\北大软微\\研一下学期\\软件实现技术\\LOST_AND_FOUND\\project\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
+      "projectUniqueName": "D:\\code\\vs 2017\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
       "projectName": "LostAndFound",
-      "projectPath": "F:\\学习资料\\北大软微\\研一下学期\\软件实现技术\\LOST_AND_FOUND\\project\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
-      "packagesPath": "C:\\Users\\limenghao\\.nuget\\packages\\",
-      "outputPath": "F:\\学习资料\\北大软微\\研一下学期\\软件实现技术\\LOST_AND_FOUND\\project\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\obj\\",
+      "projectPath": "D:\\code\\vs 2017\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "D:\\code\\vs 2017\\lost-and-found\\frontEnd\\LostAndFound\\LostAndFound\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\limenghao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
