@@ -49,7 +49,7 @@ namespace LostAndFound
         {
             //获取两个输入框的值
             string username = textBox_username.Text;
-            string password = textBox_password.Text;
+            string password = textBox_password.Password;
             if (username == "" || password == "") {
                 ShowMessageDialog("用户名和密码不允许为空！");
             }

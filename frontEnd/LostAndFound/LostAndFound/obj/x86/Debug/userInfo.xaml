@@ -5,6 +5,7 @@
     xmlns:local="using:LostAndFound"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data ="using:LostAndFound.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -93,6 +94,19 @@
             </Grid>
 
         </Grid>
+
+        <!--<GridView ItemsSource="{x:Bind UserInfos}">
+            <GridView.ItemTemplate>
+            <DataTemplate x:DataType="data:UserInfo">
+            <StackPanel>
+                <TextBlock Text="{x:Bind phonenumber}"/>
+                    <TextBlock Text="{x:Bind credit}"/>
+
+                </StackPanel>
+        </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>-->
+
 
 
 

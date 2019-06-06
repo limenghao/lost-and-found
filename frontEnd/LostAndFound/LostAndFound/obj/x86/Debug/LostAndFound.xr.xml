@@ -115,7 +115,6 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
-      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="GroupName" />
@@ -182,6 +181,17 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="LostAndFound.itemInfo" />
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="Password" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="PasswordChar" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="FontSize" />
+    </RootType>
     <RootType FullName="LostAndFound.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
       <RootProperty Name="ZoomInteractionMode" />
