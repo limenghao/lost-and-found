@@ -28,9 +28,9 @@
                             <ColumnDefinition Width="0.5*" />
                             <ColumnDefinition Width="0.5*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="【寻物启事】" VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text=" 丢失黑色耳机一副" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
-                        <TextBlock Text=" 2019-05-20" Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+                        <TextBlock Text="【招领启事】" VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text=" 捡到一顶白色帽子" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
+                        <TextBlock Text=" 2019-06-11" Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
                         <Button Content="查看" Grid.Column="3" Background="#FF325E74" Foreground="White" Width="50" Height="30" Click="clickItem"></Button>
                         <Button Content="删除" Grid.Column="4" Background="#FF325E74" Foreground="White" Width="50" Height="30" Click="deleteItem"></Button>
                     </Grid>
