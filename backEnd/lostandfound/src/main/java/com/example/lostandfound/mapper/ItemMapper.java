@@ -55,15 +55,17 @@ public interface ItemMapper {
      * @mbg.generated Wed May 22 17:34:48 CST 2019
      */
     int updateByPrimaryKey(Item record);
+
     @Select("SELECT * FROM Item WHERE itemType=#{itemType} AND category=#{category}")
-    @Results({
-            @Result(property = "title", column = "title"),
-            //@Result(property = "category", column = "category"),
-            @Result(property = "createdatetime", column = "createDatetime"),
-            @Result(property = "latitude", column = "latitude"),
-            @Result(property = "longitude", column = "longitude"),
-    })
-    List<Item> selectAllItem(int itemType, String category);
+    List<Item> selectAllItemByTAndC(int itemType, String category);
+
+    @Select("SELECT * FROM Item WHERE itemType=#{itemType}")
+    List<Item> selectAllItemByT(int itemType);
+    @Select("SELECT * FROM Item WHERE category=#{category}")
+    List<Item> selectAllItemByC(String category);
+
+    @Select("SELECT * FROM Item")
+    List<Item> selectAllItem();
 
     @Select("SELECT count(*) FROM Item")
     String getCount();

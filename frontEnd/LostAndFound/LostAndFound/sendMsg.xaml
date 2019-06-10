@@ -28,7 +28,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="【寻物启事】标题：丢失黑色钱包一个" FontFamily="Segoe UI"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="{x:Bind item.Title}" FontFamily="Segoe UI"></TextBlock>
 
         </Grid>
         <Grid Grid.Row="2">
@@ -46,11 +46,11 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">评论：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox TextWrapping="Wrap" FontSize="24" Text="失主你好！根据你的描述，我好像捡到了你的钱包。" AcceptsReturn="True"></TextBox>
+                <TextBox x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" Text="失主你好！根据你的描述，我好像捡到了你的钱包。" AcceptsReturn="True"></TextBox>
             </ScrollViewer>
         </Grid>
         <Grid Grid.Row="4">
-            <Button Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" Click="addComment" Margin="343,-1,0,0"/>
+            <Button Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" Click="addCommentAsync" Margin="343,-1,0,0"/>
         </Grid>
     </Grid>
 </Page>

@@ -48,6 +48,7 @@ public class ItemController {
         item.setItemtype(type);
         item.setTitle(title);
         item.setPlace(place);
+        item.setDatetime(datetime);
         item.setCategory(label);
         item.setContent(content);
         item.setLatitude(String.valueOf(latitude));
@@ -79,9 +80,20 @@ public class ItemController {
             map.put("msg", "不存在");
             return map;
         }else {
+            //除item各属性外，添加发布人姓名信息
+            String username = userTableMapper.getUsername(item.getCreateuserid());
+            /*Map<String,Object> result= new HashMap<>();
+            result.put("itemid",item.getItemid());
+            result.put("createuserid",item.getCreateuserid());
+            result.put("createusername",username);
+            result.put("title",item.getTitle());
+            result.put("content",item.getContent());
+            result.put("itemtype",item.getItemtype());*/
+
             map.put("status", 1);
             map.put("msg", "");
             map.put("itemInfo", item);
+            map.put("createusername",username);
             return map;
         }
     }
@@ -89,15 +101,33 @@ public class ItemController {
     @RequestMapping("/getNearItems")
     public Object getNearItems(double longitude, double latitude, int range, String category, int type, int num) {
         Map<String, Object> map = new HashMap<>();
-        List<Item> itemList = itemMapper.selectAllItem(type, category);
+        List<Item> itemList;
+        //物品类型不限时
+        if(type==0 && category.equals("不限")){
+            System.out.println("111");
+            itemList = itemMapper.selectAllItem();
+        }else if(type==0){
+            System.out.println("222");
+            itemList = itemMapper.selectAllItemByC(category);
+        }
+        else if(category.equals("不限")){
+            System.out.println("333");
+            itemList = itemMapper.selectAllItemByT(type);
+        }else {
+            System.out.println("444");
+            itemList = itemMapper.selectAllItemByTAndC(type,category);
+        }
+        System.out.println(itemList.size()+"个");
         List<Item> NearItemList = new ArrayList<>();
         List<Double> distanceList = new ArrayList<>();
-        for(Item item : itemList){
+        //for(Item item : itemList){
+        for(int i=0;i<10;i++){
+            Item item = itemList.get(i);
             //计算距离
             Point2D pointUser = new Point2D.Double(longitude,latitude);
             Point2D pointItem = new Point2D.Double(Double.valueOf(item.getLongitude()),Double.valueOf(item.getLatitude()));
             double distance = getDistance(pointUser,pointItem);
-            //System.out.println(distance);
+            //System.out.println("distance item "+item.getTitle()+": "+distance);
             //放入NearItemlist时进行排序，从近到远
             //根据distance进行排序，取最近的前num个
             if(distance < range && NearItemList.size()<num) {
@@ -185,14 +215,16 @@ public class ItemController {
             String c = ct.substring(0,ct.length()-1);
             int t = Integer.parseInt(ct.substring(ct.length()-1,ct.length()));
             System.out.println("category:"+c+", type:"+t);
-            items.addAll(itemMapper.selectAllItem(t,c));
+            items.addAll(itemMapper.selectAllItemByTAndC(t,c));
         }
         System.out.println("count of items:"+items.size());
         Point2D pointUser = new Point2D.Double(longitude,latitude);
         List<Item> resultItems = new ArrayList<>();//结果集
         List<Double> distanceList = new ArrayList<>();
         int count=0;//结果集的个数
-        for (Item item:items) {
+        //for (Item item:items) {
+        for(int l=0;l<items.size();l++){
+            Item item = items.get(l);
             Point2D pointItem = new Point2D.Double(Double.valueOf(item.getLongitude()),Double.valueOf(item.getLatitude()));
             double distance = getDistance(pointUser,pointItem);
             if(count==0){

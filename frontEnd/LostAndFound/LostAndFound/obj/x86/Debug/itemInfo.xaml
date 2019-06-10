@@ -26,7 +26,7 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/logo4.png" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
                 <Button x:ConnectionId='9' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                   ></Button>
-                <TextBlock x:ConnectionId='10' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"                                             Name="title" FontFamily="Segoe UI"></TextBlock>
+                <TextBlock x:ConnectionId='10' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"                             Name="title" FontFamily="Segoe UI"></TextBlock>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">物品种类：</TextBlock>
-            <TextBlock x:ConnectionId='8' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                              ></TextBlock>
+            <TextBlock x:ConnectionId='8' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                              ></TextBlock>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -44,7 +44,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30">内容：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox x:ConnectionId='7' TextWrapping="Wrap" FontSize="24"                                               AcceptsReturn="True" IsReadOnly="True"></TextBox>
+                <TextBox x:ConnectionId='7' TextWrapping="Wrap" FontSize="24"                               AcceptsReturn="True" IsReadOnly="True"></TextBox>
             </ScrollViewer>
         </Grid>
         <Grid Grid.Row="3">
@@ -53,7 +53,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">发布时间：</TextBlock>
-            <TextBlock x:ConnectionId='6' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                                    ></TextBlock>
+            <TextBlock x:ConnectionId='6' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                    ></TextBlock>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">发布人：</TextBlock>
-            <TextBlock x:ConnectionId='5' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                                ></TextBlock>
+            <TextBlock x:ConnectionId='5' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                ></TextBlock>
 
         </Grid>
         <Grid Grid.Row="5">
@@ -70,7 +70,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">丢失地点：</TextBlock>
-            <TextBlock x:ConnectionId='4' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                                           ></TextBlock>
+            <TextBlock x:ConnectionId='4' Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30"                           ></TextBlock>
         </Grid>
         <Grid Grid.Row="6">
             <Button x:ConnectionId='2' Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF325E74" Foreground="White" RenderTransformOrigin="1.312,0.469" Margin="46,0,0,0"                />

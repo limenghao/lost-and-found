@@ -26,21 +26,21 @@
                     <ColumnDefinition Width="6*" />
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/logo4.png" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
-                <Button x:ConnectionId='3' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                   ></Button>
-                <TextBlock x:ConnectionId='4' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="发布启事" Name="title" FontFamily="Segoe UI"></TextBlock>
+                <Button x:ConnectionId='11' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                   ></Button>
+                <TextBlock x:ConnectionId='12' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="发布启事" Name="title" FontFamily="Segoe UI"></TextBlock>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton x:ConnectionId='9' FontSize="30" GroupName="itemType"  Content="失物招领" Tag="1"                                 IsChecked="True"/>
+                <RadioButton x:ConnectionId='10' FontSize="30" GroupName="itemType"  Content="寻物启事" Tag="2"                                />
+            </StackPanel>
+            <!--
             <RadioButton HorizontalAlignment="Left" FontSize="30" VerticalAlignment="Center" FocusVisualMargin="0,0,0,0" Padding="0,0,0,0" Grid.ColumnSpan="2" Margin="161,0,0,0"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" FontFamily="Segoe UI">寻物启事</TextBlock>
-            <RadioButton Grid.Column="2" HorizontalAlignment="Right" FontSize="30" FontFamily="Segoe UI"></RadioButton>
+            <RadioButton x:Name="itemType" Grid.Column="2" HorizontalAlignment="Right" FontSize="30" FontFamily="Segoe UI"></RadioButton>
             <TextBlock Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" FontFamily="Segoe UI" Grid.ColumnSpan="2" Margin="119,11,0,0">失物招领</TextBlock>
+            -->
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -48,7 +48,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">标题：</TextBlock>
-            <TextBox Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
+            <TextBox x:ConnectionId='8' x:Name="itemTitle" Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -56,7 +56,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">物品种类：</TextBlock>
-            <TextBox Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
+            <TextBox x:ConnectionId='7' x:Name="itemCategory" Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -65,7 +65,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30">内容：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox TextWrapping="Wrap" FontSize="24" Text="本人于2019年5月21日晚于和平大道上丢失一个黑色钱包，内有少量现金和重要身份证件" AcceptsReturn="True" IsReadOnly="True"></TextBox>
+                <TextBox x:ConnectionId='6' x:Name="itemContent" TextWrapping="Wrap" FontSize="24" AcceptsReturn="True"></TextBox>
             </ScrollViewer>
         </Grid>
 
@@ -75,7 +75,8 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">丢失地点：</TextBlock>
-            <TextBox Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
+            <TextBox x:ConnectionId='4' x:Name="itemPlace" Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
+            <Button x:ConnectionId='5' Grid.Column="1" Content="定位" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF982D41" Foreground="White"                        RenderTransformOrigin="-2.005,0.458" Margin="431,0,0,0"/>
         </Grid>
         <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
@@ -83,11 +84,13 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">丢失时间：</TextBlock>
-            <TextBox Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
+            <TextBox x:ConnectionId='3' x:Name="itemLostTime" Grid.Column="1" Width="400" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center"></TextBox>
         </Grid>
         <Grid Grid.Row="7">
-            <Button x:ConnectionId='2' Content="发布" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" RenderTransformOrigin="1.312,0.469" Margin="46,0,0,0"                    />
+            <Button x:ConnectionId='2' Content="发布" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" RenderTransformOrigin="1.312,0.469" Margin="46,0,0,0"                         />
         </Grid>
+        
     </Grid>
+    
 </Page>
 

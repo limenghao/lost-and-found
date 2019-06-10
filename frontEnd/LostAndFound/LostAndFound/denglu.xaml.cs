@@ -38,6 +38,8 @@ namespace LostAndFound
         //保存经纬度
         double longitude;
         double latitude;
+
+        int clickedItemId = 1;
         public denglu()
         {
             this.InitializeComponent();
@@ -60,7 +62,7 @@ namespace LostAndFound
             double lon = position.Coordinate.Point.Position.Longitude;
             Debug.WriteLine("lat:" + lat + ",lon:" + lon);
             Debug.WriteLine("lat:" + latitude + ",lon:" + longitude);
-            ViewModel.getItemsAsync(116.45543, 39.87333, 1,"钱包",1000,5);
+            await ViewModel.getItemsAsync(116.36326, 39.76487, 0, "不限", 100000, 10);
             //await Task.Delay(1000);
             base.OnNavigatedTo(e);
         }
@@ -130,19 +132,47 @@ namespace LostAndFound
 
         }
         private void clickItem(object sender, RoutedEventArgs e) {
-            this.Frame.Navigate(typeof(itemInfo));
+            //Item selectedItem = ItemGridView.SelectedItem as Item;
+            //Debug.WriteLine("click方法内：" + selectedItem.ItemId);
+            this.Frame.Navigate(typeof(itemInfo), this.clickedItemId);
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var item = (Item)e.ClickedItem;
-            Debug.WriteLine("Item here ");
+            var itemClicked = (Item)e.ClickedItem;
+            this.clickedItemId = itemClicked.ItemId;
+            Debug.WriteLine("Item here itemId is" + itemClicked.ItemId.ToString());
+            this.Frame.Navigate(typeof(itemInfo), this.clickedItemId);
         }
 
-        private void search(object sender, RoutedEventArgs e)
+        private async void searchAsync(object sender, RoutedEventArgs e)
         {
             //Items = ItemManager.GetItems();
-            ViewModel.getItemsAsync(116.45543, 39.87333, 1, "钱包", 1000, 4);
+
+            await ViewModel.getItemsAsync(116.36326, 39.76487, 0, "不限", 100000, 10);
+        }
+
+        private async void SearchTypeRadio_checkedAsync(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            int searchType = int.Parse(rb.Tag.ToString());
+            try
+            {
+                if (searchType == 1)
+                {//按地理位置推荐
+                    await ViewModel.getItemsAsync(116.36326, 39.76487, 0, "不限", 100000, 10);
+                }
+                else
+                {//推荐用户收藏
+                    await ViewModel.getRecommendationsAsync(116.36326, 39.76487, 10);
+                }
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(ex.HResult);
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+            }
+            
         }
     }
 

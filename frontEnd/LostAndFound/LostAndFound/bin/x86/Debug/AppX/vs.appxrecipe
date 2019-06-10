@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>F:\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>7B61E8CB4C2F9BA7FCB8E3522BC55335027C8D2363E0EFEF7C4C27F9C6A63F4E</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>1D51959A2C4ABCADA716694216ACA205431BD95C3D8B7BE7EF57491A82B43FF2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>c90d5cd8-7487-4d19-93ad-5bd91b918423_1.0.0.0_x86__nkmqfabk7hsn6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>c90d5cd8-7487-4d19-93ad-5bd91b918423_nkmqfabk7hsn6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>c90d5cd8-7487-4d19-93ad-5bd91b918423</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-06-04T11:19:55.050</Modified>
+      <Modified>2019-06-10T03:15:15.263</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\LostAndFound.exe">
       <PackagePath>entrypoint\LostAndFound.exe</PackagePath>
-      <Modified>2019-06-04T11:19:54.553</Modified>
+      <Modified>2019-06-10T03:15:14.793</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\limenghao\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -622,67 +622,71 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\LostAndFound.xr.xml">
       <PackagePath>LostAndFound.xr.xml</PackagePath>
-      <Modified>2019-06-02T11:46:29.611</Modified>
+      <Modified>2019-06-10T02:42:07.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.197</Modified>
+      <Modified>2019-06-10T03:15:14.337</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\denglu.xbf">
       <PackagePath>denglu.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.120</Modified>
+      <Modified>2019-06-10T03:15:14.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\itemInfo.xbf">
       <PackagePath>itemInfo.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.200</Modified>
+      <Modified>2019-06-10T03:15:14.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.202</Modified>
+      <Modified>2019-06-10T03:15:14.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\map.xbf">
       <PackagePath>map.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.203</Modified>
+      <Modified>2019-06-10T03:15:14.340</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\MapDialog.xbf">
+      <PackagePath>MapDialog.xbf</PackagePath>
+      <Modified>2019-06-10T03:15:14.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\newItem.xbf">
       <PackagePath>newItem.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.204</Modified>
+      <Modified>2019-06-10T03:15:14.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\sendMsg.xbf">
       <PackagePath>sendMsg.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.204</Modified>
+      <Modified>2019-06-10T03:15:14.342</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userCollect.xbf">
       <PackagePath>userCollect.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.205</Modified>
+      <Modified>2019-06-10T03:15:14.342</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userFound.xbf">
       <PackagePath>userFound.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.205</Modified>
+      <Modified>2019-06-10T03:15:14.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userInfo.xbf">
       <PackagePath>userInfo.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.206</Modified>
+      <Modified>2019-06-10T03:15:14.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userInfoChange.xbf">
       <PackagePath>userInfoChange.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.207</Modified>
+      <Modified>2019-06-10T03:15:14.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userLost.xbf">
       <PackagePath>userLost.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.207</Modified>
+      <Modified>2019-06-10T03:15:14.360</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\userNews.xbf">
       <PackagePath>userNews.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.208</Modified>
+      <Modified>2019-06-10T03:15:14.361</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\UserPage.xbf">
       <PackagePath>UserPage.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.208</Modified>
+      <Modified>2019-06-10T03:15:14.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\zhuce.xbf">
       <PackagePath>zhuce.xbf</PackagePath>
-      <Modified>2019-06-04T11:19:54.209</Modified>
+      <Modified>2019-06-10T03:15:14.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -690,11 +694,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-06-03T02:45:31.754</Modified>
+      <Modified>2019-06-07T02:42:11.671</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\学习资料\北大软微\研一下学期\软件实现技术\LOST_AND_FOUND\project\lost-and-found\frontEnd\LostAndFound\LostAndFound\bin\x86\Debug\Core\LostAndFound.exe">
       <PackagePath>LostAndFound.exe</PackagePath>
-      <Modified>2019-06-04T11:19:55.036</Modified>
+      <Modified>2019-06-10T03:15:15.256</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

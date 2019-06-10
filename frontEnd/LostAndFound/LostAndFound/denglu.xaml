@@ -14,15 +14,13 @@
             <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="580" Margin="5,10,5,10" FontFamily="Segoe UI" BorderBrush="#FF325E74" BorderThickness="4,4,4,4">
                 <Grid Width="540">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
                         <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="1.5*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="{x:Bind Title,Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
-                    <TextBlock Text="{x:Bind Content,Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
+                    <TextBlock Text="{x:Bind Place,Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
                     <TextBlock Text="{x:Bind CreateDatetime,Mode=TwoWay}" Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
-                    <Button Content="查看" Grid.Column="3" Background="#FF325E74" Foreground="White" Width="50" Height="30" Click="clickItem"></Button>
                 </Grid>
             </ListViewItem>
         </DataTemplate>
@@ -57,11 +55,12 @@
                 <RowDefinition Height="9*"></RowDefinition>
 
             </Grid.RowDefinitions>
-            <TextBox x:Name="search_box" Text="" Height="40" Width="120" PlaceholderText="物品搜索" FontSize="20" RequestedTheme="Light" Margin="22,28,458,32"/>
-            <Button x:Name="search_button" Content="搜索" Height="35" Width="80" FontSize="18" Background="#FF982D41" Foreground="#FFFBE8E8" HorizontalAlignment="Left" Margin="147,30,0,0" VerticalAlignment="Top" Click="search"/>
-
-            <RadioButton x:Name="location_RadioButton" GroupName="asd" Content="地点" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Height="40" Width="120" Margin="272,0,0,0"/>
-            <RadioButton x:Name="shoucang_RadioButton" GroupName="asd" Content="收藏" FontSize="22" Height="40" Width="120" HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <RadioButton FontSize="30" GroupName="searchType"  Content="地点" Tag="1" Checked="SearchTypeRadio_checkedAsync" IsChecked="True"/>
+                <RadioButton FontSize="30" GroupName="searchType"  Content="收藏" Tag="2" Checked="SearchTypeRadio_checkedAsync"/>
+            </StackPanel>
+            <!--<TextBox x:Name="search_box" Text="" Height="40" Width="120" PlaceholderText="物品搜索" FontSize="20" RequestedTheme="Light" Margin="22,28,458,32"/>-->
+            <Button x:Name="search_button" Content="搜索" Height="35" Width="80" FontSize="18" Background="#FF982D41" Foreground="#FFFBE8E8" HorizontalAlignment="Left" Margin="415,5,0,0" VerticalAlignment="Top" Click="searchAsync" Grid.Row="1"/>
             <Button x:Name="fabu_button" Content="发布启事" HorizontalAlignment="Left" Height="50" Width="111" FontSize="20" Background="#FF325E74" Foreground="#FFFBF8F5" Click="fabu_button_Click" FontWeight="Bold" Margin="479,0,0,0" VerticalAlignment="Center"/>
             <Grid Grid.Row="1" BorderBrush="#FF325E74" BorderThickness="0,0,0,2">
                 <TextBlock Grid.Row="1" x:Name="fanwei_text" Text="范围" Height="47" Width="86" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Margin="22,6,492,0" Grid.RowSpan="3"/>
@@ -81,11 +80,11 @@
                     <ComboBoxItem>不限</ComboBoxItem>
                 </ComboBox>
             </Grid>
-            <GridView Grid.Row="2" Background="White"
+            <GridView x:Name="ItemGridView" Grid.Row="2" Background="White"
                       ItemsSource="{x:Bind ViewModel.DefaultItems}" 
-                  IsItemClickEnabled="True" 
-                  ItemClick="GridView_ItemClick"
-                  ItemTemplate="{StaticResource ItemDataTemplate}">
+                      ItemClick="GridView_ItemClick" 
+                      IsItemClickEnabled="True" 
+                      ItemTemplate="{StaticResource ItemDataTemplate}">
             </GridView>
 
         </Grid>

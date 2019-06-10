@@ -34,6 +34,7 @@ namespace LostAndFound.Models
         public string Category;
         public string Place;
         public string CreateUser;
+        public string CreateUserName;
         public string Title;
         public string Content;
         public string CreateDatetime;
@@ -63,6 +64,11 @@ namespace LostAndFound.Models
             get => CreateUser;
             set { CreateUser = value; OnPropertyChanged("CreateUser"); }
         }
+        public string gsCreateUserName
+        {
+            get => CreateUserName;
+            set { CreateUserName = value; OnPropertyChanged("CreateUserName"); }
+        }
         public string gsContent
         {
             get => Content;
@@ -79,13 +85,14 @@ namespace LostAndFound.Models
             set { CreateDatetime = value; OnPropertyChanged("CreateDatetime"); }
         }
 
-        public Item(int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime)
+        public Item(int itemId, int itemType, string category, string place, string createUser,string createUserName, string content, string title, string createDatetime)
         {
             this.ItemId = itemId;
             this.ItemType = itemType;
             this.Category = category;
             this.Place = place;
             this.CreateUser = createUser;
+            this.CreateUserName = createUserName;
             this.Content = content;
             this.Title = title;
             this.CreateDatetime = createDatetime;
@@ -109,12 +116,11 @@ namespace LostAndFound.Models
         private ObservableCollection<Item> defaultItems = new ObservableCollection<Item>();
         public ObservableCollection<Item> DefaultItems { get { return this.defaultItems; } }
 
-        private Item item = new Item(1,1,"钱包","大路","张三", "hh", "hahha", "2019-05-23");
+        private Item item = new Item(1,1,"钱包","大路","1","张三", "hh", "hahha", "2019-05-23");
         public Item MyItem { get { return this.item; } }
 
         public ItemViewModel() {
-            //this.defaultItems.Add(new Item(1, "hh", "hahha", "2019-05-23"));
-            //this.defaultItems.Add(new Item(2, "hh", "hahha", "2019-05-23"));
+            this.defaultItems.Add(item);
         }
 
         //默认获取附近的启事
@@ -140,11 +146,21 @@ namespace LostAndFound.Models
                 {
                     //根据文档可知，此方法传出结果的“itemInfo”是一个数组，用JAarry解析
                     JArray items = JArray.Parse(resultObj["itemInfo"].ToString());
+                    Debug.WriteLine("size:" + items.Count.ToString());
                     for (int i = 0; i < items.Count; i++)
                     {
                         JObject item = JObject.Parse(items[i].ToString());
                         //测试是否已经拿到了数据，测试可用
                         Debug.WriteLine(item["category"]);
+                        string myTitle = "";
+                        if (int.Parse(item["itemtype"].ToString()) == 1)
+                        {
+                            myTitle = "【寻物启事】";
+                        }
+                        else {
+                            myTitle = "【失物招领】";
+                        }
+                        myTitle += item["title"].ToString();
                         this.defaultItems.Add(new Item
                         (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
                             int.Parse(item["itemid"].ToString()),
@@ -152,23 +168,26 @@ namespace LostAndFound.Models
                             item["category"].ToString(),
                             item["place"].ToString(),
                             item["createuserid"].ToString(),
+                            "2",//resultObj["createusername"].ToString(),
                             item["content"].ToString(),
-                            item["title"].ToString(),
+                            myTitle,
                             item["createdatetime"].ToString()
                         ));
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                // Details in ex.Message and ex.HResult.   
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+                //Details in ex.Message and ex.HResult.   
             }
         }
 
         //根据item ID 获取特定item详情
-        public async Task getItemAsync(int itemId)
+        public async Task<Item> getItemAsync(int itemId)
         {
-            Item resultItem= new Item(1, 1, "钱包", "和平大路", "李四", "hhballalala", "hahha", "2019-05-23");
+            Item resultItem= new Item(1, 1, "钱包", "和平大路","3", "李四", "hhballalala", "hahha", "2019-05-23");
            
             try
             {
@@ -177,9 +196,7 @@ namespace LostAndFound.Models
                 //接口的路径，与接口文档保持一致
                 var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/item/getItemInfo?itemId=" + itemId);
                 HttpResponseMessage response = await client.GetAsync(uri);
-                Debug.WriteLine("here *************");
                 //Debug.WriteLine(response);
-                this.item = resultItem;
                 JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
                 //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
                 if (int.Parse(resultObj["status"].ToString()) != 1)
@@ -188,13 +205,14 @@ namespace LostAndFound.Models
                 }
                 else
                 {
-                    Debug.WriteLine("here get the item:" + resultObj["itemInfo"]["title"].ToString());
+                    //Debug.WriteLine("here get the item:" + resultObj["itemInfo"]["title"].ToString());
                     resultItem = new Item(
                         int.Parse(resultObj["itemInfo"]["itemid"].ToString()),
                         int.Parse(resultObj["itemInfo"]["itemtype"].ToString()),
                         resultObj["itemInfo"]["category"].ToString(),
                         resultObj["itemInfo"]["place"].ToString(),
                         resultObj["itemInfo"]["createuserid"].ToString(),
+                        resultObj["createusername"].ToString(),
                         resultObj["itemInfo"]["content"].ToString(),
                         resultObj["itemInfo"]["title"].ToString(),
                         resultObj["itemInfo"]["createdatetime"].ToString()
@@ -217,7 +235,65 @@ namespace LostAndFound.Models
                 Debug.WriteLine("here wrong in the getItem function");
                 // Details in ex.Message and ex.HResult.   
             }
-            this.item = resultItem;
+            //this.item = resultItem;
+            return resultItem;
+        }
+
+        public async Task getRecommendationsAsync(double longitude, double latitude, int num)
+        {
+            this.defaultItems.Clear();
+            try
+            {
+                //获取全局的client对象，进行接口访问
+                HttpClient client = (Application.Current as App).client;
+                //接口的路径，与接口文档保持一致
+                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/item/getRecommendations" +
+                      //"item/getRecommendations?longitude=116.36326&latitude=39.76487&num=6
+                      "?longitude=" + longitude + "&latitude=" + latitude + "&num=" + num + "");
+                HttpResponseMessage response = await client.GetAsync(uri);
+                Debug.WriteLine(response);
+                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+                //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
+                if (int.Parse(resultObj["status"].ToString()) != 1)
+                {
+                    //ShowMessageDialog(resultObj["msg"].ToString());
+                }
+                else
+                {
+                    //根据文档可知，此方法传出结果的“itemInfo”是一个数组，用JAarry解析
+                    JArray items = JArray.Parse(resultObj["itemInfo"].ToString());
+                    for (int i = 0; i < items.Count; i++)
+                    {
+                        JObject item = JObject.Parse(items[i].ToString());
+                        string myTitle = "";
+                        if (int.Parse(item["itemtype"].ToString()) == 1)
+                        {
+                            myTitle = "【寻物启事】";
+                        }
+                        else
+                        {
+                            myTitle = "【失物招领】";
+                        }
+                        myTitle += item["title"].ToString();
+                        this.defaultItems.Add(new Item
+                        (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
+                            int.Parse(item["itemid"].ToString()),
+                            int.Parse(item["itemtype"].ToString()),
+                            item["category"].ToString(),
+                            item["place"].ToString(),
+                            item["createuserid"].ToString(),
+                            "",
+                            item["content"].ToString(),
+                            myTitle,
+                            item["createdatetime"].ToString()
+                        ));
+                    }
+                }
+            }
+            catch
+            {
+                // Details in ex.Message and ex.HResult.   
+            }
         }
 
     }
@@ -228,7 +304,7 @@ namespace LostAndFound.Models
         {
             var items = new ObservableCollection<Item>();
             
-            items.Add(new Item(1, 1, "钱包", "大路", "张三", "hh", "hahha", "2019-05-23"));
+            items.Add(new Item(1, 1, "钱包", "大路","2", "张三", "hh", "hahha", "2019-05-23"));
 
             return items;
         }

@@ -1,6 +1,7 @@
 ﻿using LostAndFound.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,16 +26,21 @@ namespace LostAndFound
     public sealed partial class itemInfo : Page
     {
         public ItemViewModel itemViewModel { get; set; }
+        public Item item = new Item(1, 1, "钱包", "和平大路", "2","李四si", "hhballalala", "hahha", "2019-05-23");
+        private int itemId = 1;
         public itemInfo()
         {
             this.InitializeComponent();
             this.itemViewModel = new ItemViewModel();
+            //this.item.Place = "哗哗哗";
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            int itemId = 1;
-            await itemViewModel.getItemAsync(itemId);
+            int itemId = (int)e.Parameter;
+            Debug.WriteLine("在启事详情页面获取到的itemId为"+itemId.ToString());
+            this.item = await itemViewModel.getItemAsync(itemId);
+            this.Bindings.Update();
             base.OnNavigatedTo(e);
         }
         private void backToMain(object sender, RoutedEventArgs e)
@@ -45,7 +51,7 @@ namespace LostAndFound
         //向启事添加评论
         private void comment(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(sendMsg));
+            this.Frame.Navigate(typeof(sendMsg),this.itemId);
         }
 
         //添加收藏

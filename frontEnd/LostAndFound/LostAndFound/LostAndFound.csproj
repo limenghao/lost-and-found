@@ -107,6 +107,9 @@
     <Compile Include="map.xaml.cs">
       <DependentUpon>map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapDialog.xaml.cs">
+      <DependentUpon>MapDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Item.cs" />
     <Compile Include="newItem.xaml.cs">
       <DependentUpon>newItem.xaml</DependentUpon>
@@ -189,6 +192,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

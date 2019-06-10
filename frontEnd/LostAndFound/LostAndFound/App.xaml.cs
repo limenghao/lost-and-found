@@ -32,7 +32,8 @@ namespace LostAndFound
         
         //全局的client
         public HttpClient client = new HttpClient();
-
+        public double latitude = 116.3636;
+        public double longitude = 39.7643;
 
         public App()
         {
