@@ -5,6 +5,7 @@
     xmlns:local="using:LostAndFound"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data ="using:LostAndFound.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -18,7 +19,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Image Source="Assets/geren.png" Width="300" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            <Image Source="Assets/geren.png" Width="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
             <!--<Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="editPersonInfo">编辑</Button>-->
         </Grid>
         <Grid Grid.Row="1">
@@ -35,7 +36,7 @@
             </Ellipse>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Center">迟威</TextBlock>
-                <FontIcon Glyph="&#xE1D1;"></FontIcon>
+
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Style="{StaticResource BodyTextBlockStyle}" Foreground="LightGray">电话：</TextBlock>
@@ -45,52 +46,71 @@
         <Grid Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
-            </Grid.ColumnDefinitions> 
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">信用</TextBlock>
-            <FontIcon Grid.Column="1" Glyph="&#xE1CF;" HorizontalAlignment="Left" />
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">信用</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <FontIcon  Grid.Column="1" Glyph="&#xE1CF;" HorizontalAlignment="Center" />
+               
+               
+            </Grid>
         </Grid>
+
+
         <Grid Grid.Row="3" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">积分</TextBlock>
-            <FontIcon Grid.Column="1"  Glyph="&#xE14E;" HorizontalAlignment="Left"></FontIcon>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">积分</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <FontIcon Grid.Column="1"  Glyph="&#xE14E;" HorizontalAlignment="Center"></FontIcon>
+            </Grid>
+
         </Grid>
         <Grid Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">地区</TextBlock>
-            <TextBlock Grid.Column="1" VerticalAlignment="Center">上海</TextBlock>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">地区</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">上海</TextBlock>
+            </Grid>
+
+
         </Grid>
-        <!--
         <Grid Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock VerticalAlignment="Center">朋友圈</TextBlock>
-            <Image Grid.Column="1" Source="Assets/Square44x44Logo.png" HorizontalAlignment="Left" ></Image>
+            <Grid Grid.Column="1">
+                <Button>修改个人信息</Button>
+            </Grid>
+
         </Grid>
-        -->
-        <!--
-        <StackPanel Width="500" Height="500" Background="red">
-            <TextBlock FontSize="50" >个人名片</TextBlock>
-            <Image HorizontalAlignment="Left" Height="100" Width="100" Source="assets/LockScreenLogo.scale-200.png"></Image>
-            <TextBlock FontSize="20" FontWeight="Bold">展示：</TextBlock>
-            <TextBlock FontSize="20">用户名 电话 信用 积分 头像</TextBlock>
+
+        <!--<GridView ItemsSource="{x:Bind UserInfos}">
+            <GridView.ItemTemplate>
+            <DataTemplate x:DataType="data:UserInfo">
+            <StackPanel>
+                <TextBlock Text="{x:Bind phonenumber}"/>
+                    <TextBlock Text="{x:Bind credit}"/>
+
+                </StackPanel>
+        </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>-->
 
 
-            <TextBlock FontSize="20" Canvas.ZIndex="20" FontWeight="Bold">修改：</TextBlock>
-            <TextBlock FontSize="20">ID</TextBlock>
-            <TextBlock FontSize="20">用户名</TextBlock>
-            <TextBlock FontSize="20">密码</TextBlock>
-            <TextBlock FontSize="20">电话</TextBlock>
-            <TextBlock FontSize="20">头像</TextBlock>
-        </StackPanel>
-        -->
+
+
     </Grid>
 </Page>

@@ -1,4 +1,3 @@
-WinMetadata\Windows.winmd
 Assets\bg.jpg
 Assets\bg2.jpg
 Assets\bg3.jpg
@@ -39,3 +38,4 @@ userNews.xbf
 UserPage.xbf
 zhuce.xbf
 Properties\Default.rd.xml
+WinMetadata\Windows.winmd

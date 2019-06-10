@@ -11,7 +11,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Image Source="Assets/xunwu.png" Width="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
@@ -19,6 +20,8 @@
         </Grid>
         <Grid Grid.Row="1">
             <ListView x:Name="lost_list" HorizontalAlignment="Left" VerticalAlignment="Top" Width="580">
+                
+                <!--第一条-->
                 <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,10,5,10" FontFamily="Segoe UI" BorderBrush="#FF325E74" BorderThickness="4,4,4,4">
                     <Grid Width="540">
                         <Grid.ColumnDefinitions>
@@ -35,9 +38,27 @@
                         <Button Content="删除" Grid.Column="4" Background="#FF325E74" Foreground="White" Width="50" Height="30" Click="deleteItem"></Button>
                     </Grid>
                 </ListViewItem>
-
+                
+                <!--第二条-->
+                <ListViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,10,5,10" FontFamily="Segoe UI" BorderBrush="#FF325E74" BorderThickness="4,4,4,4">
+                    <Grid Width="540">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="【寻物启事】" VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text=" 丢失笔记一本" VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
+                        <TextBlock Text=" 2019-06-06" Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+                        <Button Content="查看" Grid.Column="3" Background="#FF325E74" Foreground="White" Width="50" Height="30"></Button>
+                        <Button Content="删除" Grid.Column="4" Background="#FF325E74" Foreground="White" Width="50" Height="30" ></Button>
+                    </Grid>
+                </ListViewItem>
             </ListView>
         </Grid>
+       
 
     </Grid>
 </Page>

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using LostAndFound.Models;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -22,15 +23,14 @@ namespace LostAndFound
     /// </summary>
     public sealed partial class userInfo : Page
     {
+        
         public userInfo()
         {
             this.InitializeComponent();
+            //UserInfos = userInfoManager.GetUserInfos;
         }
-
-        //打开编辑个人信息页面
-        private void editPersonInfo(object sender, RoutedEventArgs e)
-        {
-
-        }
+        //
+       // private int UserInfos;
+       
     }
 }
