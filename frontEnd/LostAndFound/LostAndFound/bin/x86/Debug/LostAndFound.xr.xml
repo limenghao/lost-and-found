@@ -101,23 +101,8 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
-<<<<<<< HEAD
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="MaxWidth" />
-=======
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
-      <RootProperty Name="GroupName" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="FocusVisualMargin" />
->>>>>>> 0a3ba602a7337209129d4626a86ff329f7abbc94
-      <RootProperty Name="Padding" />
       <RootEvent Name="Click" />
       <RootEvent Name="Tapped" />
     </RootType>
@@ -185,7 +170,6 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
-      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
@@ -199,6 +183,7 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="LostAndFound.itemInfo" />
+    <RootType FullName="LostAndFound.itemMsgList" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
       <RootProperty Name="HorizontalAlignment" />
@@ -229,12 +214,6 @@
     <RootType FullName="LostAndFound.MapDialog" />
     <RootType FullName="LostAndFound.newItem" />
     <RootType FullName="LostAndFound.sendMsg" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Items" />
-    </RootType>
     <RootType FullName="LostAndFound.userCollect" />
     <RootType FullName="LostAndFound.userFound" />
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">

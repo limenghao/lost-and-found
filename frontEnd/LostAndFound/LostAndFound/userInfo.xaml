@@ -35,7 +35,7 @@
                 </Ellipse.Fill>
             </Ellipse>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Center">迟威</TextBlock>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Center" Text="{x:Bind username}"></TextBlock>
 
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">

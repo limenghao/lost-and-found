@@ -67,7 +67,8 @@ public interface CollectionMapper {
     @Select("SELECT max(coId) FROM Collection")
     String getMaxId();
 
-    @Select("SELECT i.itemId,i.title,i.category,i.createDatetime,i.itemType" +
+    @Select("SELECT i.itemId,i.title,i.category,i.createDatetime," +
+            "i.itemType,i.createUserId,i.place" +
             " FROM Collection as c, Item as i" +
             " WHERE c.itemId=i.itemId AND userId=#{userId}")
     List<Item> getMyCollections(int userId );

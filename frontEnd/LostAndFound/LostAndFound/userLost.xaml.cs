@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LostAndFound.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,11 +24,18 @@ namespace LostAndFound
     /// </summary>
     public sealed partial class userLost : Page
     {
+        public ItemViewModel ViewModel { get; set; }
+        int clickedItemId = 1;
         public userLost()
         {
             this.InitializeComponent();
+            this.ViewModel = new ItemViewModel();
         }
-
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            await ViewModel.getMyItemsList(1);
+            base.OnNavigatedTo(e);
+        }
         private void deleteItem(object sender, RoutedEventArgs e)
         {
 
@@ -36,5 +45,15 @@ namespace LostAndFound
         {
             this.Frame.Navigate(typeof(itemInfo));
         }
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var itemClicked = (Item)e.ClickedItem;
+            this.clickedItemId = itemClicked.ItemId;
+            Debug.WriteLine("Item here itemId is" + itemClicked.ItemId.ToString());
+            MainNavigateToEvent(typeof(itemInfo), this.clickedItemId);
+        }
+
+        public delegate void NavigateHandel(Type page, int itemId);
+        public static event NavigateHandel MainNavigateToEvent;
     }
 }

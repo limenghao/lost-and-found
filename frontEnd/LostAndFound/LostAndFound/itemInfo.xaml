@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30">发布人：</TextBlock>
-            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind item.CreateUser}"></TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Text="{x:Bind item.CreateUserName}"></TextBlock>
 
         </Grid>
         <Grid Grid.Row="5">
@@ -76,7 +76,7 @@
             <Button Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF325E74" Foreground="White" RenderTransformOrigin="1.312,0.469" Margin="46,0,0,0" Click="comment"/>
             <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Margin="118,2,0,0" Foreground="#FF1F4355">（您的评论仅发布人可见）</TextBlock>
 
-            <Button Content="添加收藏" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" Click="addToStar" Margin="343,-1,0,0"/>
+            <Button Content="添加收藏" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF982D41" Foreground="White" Click="addToStarAsync" Margin="343,-1,0,0"/>
         </Grid>
     </Grid>
 </Page>

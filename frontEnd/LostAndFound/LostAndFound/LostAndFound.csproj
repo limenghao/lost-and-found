@@ -101,6 +101,9 @@
     <Compile Include="itemInfo.xaml.cs">
       <DependentUpon>itemInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="itemMsgList.xaml.cs">
+      <DependentUpon>itemMsgList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,7 @@
       <DependentUpon>MapDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="newItem.xaml.cs">
       <DependentUpon>newItem.xaml</DependentUpon>
@@ -185,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="itemInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemMsgList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">发给：</TextBlock>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">张三</TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0" Text="{x:Bind item.CreateUserName}"></TextBlock>
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">评论：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" Text="失主你好！根据你的描述，我好像捡到了你的钱包。" AcceptsReturn="True"></TextBox>
+                <TextBox x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" AcceptsReturn="True"></TextBox>
             </ScrollViewer>
         </Grid>
         <Grid Grid.Row="4">

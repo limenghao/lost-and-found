@@ -1,3 +1,4 @@
+WinMetadata\Windows.winmd
 Assets\bg.jpg
 Assets\bg2.jpg
 Assets\bg3.jpg
@@ -23,6 +24,7 @@ Assets\zhaoling.png
 App.xbf
 denglu.xbf
 itemInfo.xbf
+itemMsgList.xbf
 LostAndFound.xr.xml
 MainPage.xbf
 map.xbf
@@ -38,4 +40,3 @@ userNews.xbf
 UserPage.xbf
 zhuce.xbf
 Properties\Default.rd.xml
-WinMetadata\Windows.winmd

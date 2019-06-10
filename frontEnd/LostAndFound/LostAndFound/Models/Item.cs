@@ -33,6 +33,7 @@ namespace LostAndFound.Models
         public int ItemType;
         public string Category;
         public string Place;
+        public string Datetime;
         public string CreateUser;
         public string CreateUserName;
         public string Title;
@@ -58,6 +59,10 @@ namespace LostAndFound.Models
         {
             get => Place;
             set { Place = value; OnPropertyChanged("Place"); }
+        }
+        public string gsDatetime {
+            get => Datetime;
+            set { Datetime = value;OnPropertyChanged("Datetime"); }
         }
         public string gsCreateUser
         {
@@ -85,12 +90,13 @@ namespace LostAndFound.Models
             set { CreateDatetime = value; OnPropertyChanged("CreateDatetime"); }
         }
 
-        public Item(int itemId, int itemType, string category, string place, string createUser,string createUserName, string content, string title, string createDatetime)
+        public Item(int itemId, int itemType, string category, string place,string datetime, string createUser,string createUserName, string content, string title, string createDatetime)
         {
             this.ItemId = itemId;
             this.ItemType = itemType;
             this.Category = category;
             this.Place = place;
+            this.Datetime = datetime;
             this.CreateUser = createUser;
             this.CreateUserName = createUserName;
             this.Content = content;
@@ -116,7 +122,7 @@ namespace LostAndFound.Models
         private ObservableCollection<Item> defaultItems = new ObservableCollection<Item>();
         public ObservableCollection<Item> DefaultItems { get { return this.defaultItems; } }
 
-        private Item item = new Item(1,1,"钱包","大路","1","张三", "hh", "hahha", "2019-05-23");
+        private Item item = new Item(1,1,"钱包","大路","2019-05-23","1","张三", "hh", "hahha", "2019-05-23");
         public Item MyItem { get { return this.item; } }
 
         public ItemViewModel() {
@@ -161,18 +167,24 @@ namespace LostAndFound.Models
                             myTitle = "【失物招领】";
                         }
                         myTitle += item["title"].ToString();
+                        //Place超过六个字时省略后面的内容
+                        string place = item["place"].ToString();
+                        if(place.Length>6)
+                            place = place.Substring(0, 6);
                         this.defaultItems.Add(new Item
                         (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
                             int.Parse(item["itemid"].ToString()),
                             int.Parse(item["itemtype"].ToString()),
                             item["category"].ToString(),
-                            item["place"].ToString(),
+                            place,
+                            item["datetime"].ToString(),
                             item["createuserid"].ToString(),
                             "2",//resultObj["createusername"].ToString(),
                             item["content"].ToString(),
                             myTitle,
                             item["createdatetime"].ToString()
                         ));
+                        
                     }
                 }
             }
@@ -187,7 +199,7 @@ namespace LostAndFound.Models
         //根据item ID 获取特定item详情
         public async Task<Item> getItemAsync(int itemId)
         {
-            Item resultItem= new Item(1, 1, "钱包", "和平大路","3", "李四", "hhballalala", "hahha", "2019-05-23");
+            Item resultItem= new Item(1, 1, "钱包", "和平大路","2019-05-13","3", "李四", "hhballalala", "hahha", "2019-05-23");
            
             try
             {
@@ -205,12 +217,13 @@ namespace LostAndFound.Models
                 }
                 else
                 {
-                    //Debug.WriteLine("here get the item:" + resultObj["itemInfo"]["title"].ToString());
+                    Debug.WriteLine("启事详情方法 here get the item:" + resultObj["itemInfo"]["title"].ToString());
                     resultItem = new Item(
                         int.Parse(resultObj["itemInfo"]["itemid"].ToString()),
                         int.Parse(resultObj["itemInfo"]["itemtype"].ToString()),
                         resultObj["itemInfo"]["category"].ToString(),
                         resultObj["itemInfo"]["place"].ToString(),
+                        resultObj["itemInfo"]["datetime"].ToString(),
                         resultObj["itemInfo"]["createuserid"].ToString(),
                         resultObj["createusername"].ToString(),
                         resultObj["itemInfo"]["content"].ToString(),
@@ -275,12 +288,16 @@ namespace LostAndFound.Models
                             myTitle = "【失物招领】";
                         }
                         myTitle += item["title"].ToString();
+                        string place = item["place"].ToString();
+                        if (place.Length > 6)
+                            place = place.Substring(0, 6);
                         this.defaultItems.Add(new Item
                         (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
                             int.Parse(item["itemid"].ToString()),
                             int.Parse(item["itemtype"].ToString()),
                             item["category"].ToString(),
-                            item["place"].ToString(),
+                            place,
+                            item["datetime"].ToString(),
                             item["createuserid"].ToString(),
                             "",
                             item["content"].ToString(),
@@ -288,6 +305,116 @@ namespace LostAndFound.Models
                             item["createdatetime"].ToString()
                         ));
                     }
+                }
+            }
+            catch
+            {
+                // Details in ex.Message and ex.HResult.   
+            }
+        }
+
+        public async Task getMyItemsList(int type)
+        {
+            this.defaultItems.Clear();
+            try
+            {
+                //获取全局的client对象，进行接口访问
+                HttpClient client = (Application.Current as App).client;
+                //接口的路径，与接口文档保持一致
+                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/item/getItemInfosByUser?type=" + type);
+                HttpResponseMessage response = await client.GetAsync(uri);
+                Debug.WriteLine(response);
+                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+                //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
+                if (int.Parse(resultObj["status"].ToString()) != 1)
+                {
+                    //ShowMessageDialog(resultObj["msg"].ToString());
+                }
+                else
+                {
+                    //根据文档可知，此方法传出结果的“itemInfo”是一个数组，用JAarry解析
+                    JArray items = JArray.Parse(resultObj["itemList"].ToString());
+                    for (int i = 0; i < items.Count; i++)
+                    {
+                        JObject item = JObject.Parse(items[i].ToString());
+                        string myTitle = "";
+                        if (int.Parse(item["itemtype"].ToString()) == 1)
+                        {
+                            myTitle = "【寻物启事】";
+                        }
+                        else
+                        {
+                            myTitle = "【失物招领】";
+                        }
+                        myTitle += item["title"].ToString();
+                        string place = item["place"].ToString();
+                        if (place.Length > 6)
+                            place = place.Substring(0, 6);
+                        this.defaultItems.Add(new Item
+                        (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
+                            int.Parse(item["itemid"].ToString()),
+                            int.Parse(item["itemtype"].ToString()),
+                            item["category"].ToString(),
+                            place,
+                            item["datetime"].ToString(),
+                            item["createuserid"].ToString(),
+                            "",
+                            item["content"].ToString(),
+                            myTitle,
+                            item["createdatetime"].ToString()
+                        ));
+                    }
+                }
+            }
+            catch
+            {
+                // Details in ex.Message and ex.HResult.   
+            }
+        }
+
+        public async Task getMyCollections()
+        {
+            this.defaultItems.Clear();
+            try
+            {
+                //获取全局的client对象，进行接口访问
+                HttpClient client = (Application.Current as App).client;
+                //接口的路径，与接口文档保持一致
+                var uri = new Uri("https://lostandfoundapp.chinacloudsites.cn/item/getMyCollections");
+                HttpResponseMessage response = await client.GetAsync(uri);
+                Debug.WriteLine(response);
+                JObject resultObj = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+                //如果status不为1，说明登录失败，将报错信息以弹框方式显示。
+                JArray items = JArray.Parse(resultObj["itemList"].ToString());
+                for (int i = 0; i < items.Count; i++)
+                {
+                    JObject item = JObject.Parse(items[i].ToString());
+                    string myTitle = "";
+                    if (int.Parse(item["itemtype"].ToString()) == 1)
+                    {
+                        myTitle = "【寻物启事】";
+                    }
+                    else
+                    {
+                        myTitle = "【失物招领】";
+                    }
+                    myTitle += item["title"].ToString();
+                    string place = item["place"].ToString();
+                    if (place.Length > 6)
+                        place = place.Substring(0, 6);
+                    this.defaultItems.Add(new Item
+                    (// int itemId, int itemType, string category, string place, string createUser, string content, string title, string createDatetime
+                        int.Parse(item["itemid"].ToString()),
+                        int.Parse(item["itemtype"].ToString()),
+                        item["category"].ToString(),
+                        place,
+                        item["datetime"].ToString(),
+                        item["createuserid"].ToString(),
+                        "",
+                        item["content"].ToString(),
+                        myTitle,
+                        item["createdatetime"].ToString()
+                    ));
                 }
             }
             catch
@@ -304,7 +431,7 @@ namespace LostAndFound.Models
         {
             var items = new ObservableCollection<Item>();
             
-            items.Add(new Item(1, 1, "钱包", "大路","2", "张三", "hh", "hahha", "2019-05-23"));
+            items.Add(new Item(1, 1, "钱包", "大路","2019-05-23","2", "张三", "hh", "hahha", "2019-05-23"));
 
             return items;
         }

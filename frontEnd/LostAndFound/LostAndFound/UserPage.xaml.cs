@@ -45,6 +45,30 @@ namespace LostAndFound
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            userCollect.MainNavigateToEvent += usercollect_MianNavigateToEvent;
+            userLost.MainNavigateToEvent += userlost_MianNavigateToEvent;
+            userFound.MainNavigateToEvent += userfound_MianNavigateToEvent;
+            itemMsgList.MainNavigateToEvent += itemmsglist_MianNavigateToEvent;
+        }
+
+        private void usercollect_MianNavigateToEvent(Type page,int itemId)
+        {
+            this.Frame.Navigate(typeof(itemInfo),itemId);
+        }
+        private void userlost_MianNavigateToEvent(Type page, int itemId)
+        {
+            this.Frame.Navigate(typeof(itemInfo), itemId);
+        }
+        private void userfound_MianNavigateToEvent(Type page, int itemId)
+        {
+            this.Frame.Navigate(typeof(itemInfo), itemId);
+        }
+        private void itemmsglist_MianNavigateToEvent(Type page, int itemId)
+        {
+            this.Frame.Navigate(typeof(sendMsg), itemId);
+        }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -78,6 +102,10 @@ namespace LostAndFound
         private void backToMain(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(denglu));
+        }
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

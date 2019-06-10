@@ -23,12 +23,12 @@
                     <ColumnDefinition Width="6*" />
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/logo4.png" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
-                <Button x:ConnectionId='5' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                       ></Button>
-                <TextBlock x:ConnectionId='6' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="添加评论" Name="title" FontFamily="Segoe UI"></TextBlock>
+                <Button x:ConnectionId='6' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                       ></Button>
+                <TextBlock x:ConnectionId='7' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="添加评论" Name="title" FontFamily="Segoe UI"></TextBlock>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock x:ConnectionId='4' HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"                            FontFamily="Segoe UI"></TextBlock>
+            <TextBlock x:ConnectionId='5' HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"                            FontFamily="Segoe UI"></TextBlock>
 
         </Grid>
         <Grid Grid.Row="2">
@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">发给：</TextBlock>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">张三</TextBlock>
+            <TextBlock x:ConnectionId='4' Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0"                                    ></TextBlock>
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">评论：</TextBlock>
             <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
-                <TextBox x:ConnectionId='3' x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" Text="失主你好！根据你的描述，我好像捡到了你的钱包。" AcceptsReturn="True"></TextBox>
+                <TextBox x:ConnectionId='3' x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" AcceptsReturn="True"></TextBox>
             </ScrollViewer>
         </Grid>
         <Grid Grid.Row="4">

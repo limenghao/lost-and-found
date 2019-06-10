@@ -27,16 +27,17 @@ namespace LostAndFound
     public sealed partial class sendMsg : Page
     {
         public ItemViewModel itemViewModel { get; set; }
-        public Item item = new Item(1, 1, "钱包", "和平大路","2", "李四si", "hhballalala", "hahha", "2019-05-23");
+        public Item item = new Item(1, 1, "钱包", "和平大路","2019-05-24","2", "李四si", "hhballalala", "hahha", "2019-05-23");
         private int itemId=1;
         public sendMsg()
         {
             this.InitializeComponent();
+            this.itemViewModel = new ItemViewModel();
         }
 
         private void backToItemInfo(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(itemInfo));
+            this.Frame.Navigate(typeof(itemInfo),this.itemId);
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
